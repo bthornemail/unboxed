@@ -41,6 +41,9 @@ printf '%s\n' "$UNEQUAL" | "$BUSYBOX" grep -F 'not comparable' >/dev/null || {
 
 printf '%s\n' 'PASS: unequal raw-byte vertices are not compared'
 
+"$BUSYBOX" sh "$ROOT/tests/check-web.sh"
+"$BUSYBOX" sh "$ROOT/tests/check-http11-status.sh"
+
 if [ "${RUN_IDEA_PROBES:-0}" -eq 1 ]; then
     "$BUSYBOX" sh "$ROOT/tests/probe-ideas.sh"
 else

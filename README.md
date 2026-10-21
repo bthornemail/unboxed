@@ -19,6 +19,11 @@ claim file when one is intentionally defined; it uses only BusyBox regular
 expressions against tagged literal bit sequences and does not recompute values
 or call the analyzer.
 
+`tests/http11-status-literals.txt` is a separate tagged literal vocabulary for
+HTTP/1.1 content-negotiation experiments. `tests/check-http11-status.sh`
+validates its arrays with BusyBox regular expressions only; the codes are not
+authentication or trust signals.
+
 The existing `full`, `list`, and `full_list` files are preserved as raw-byte
 artifacts. They are inputs for experiments, not generated source code. The
 original `diff -y` pipeline is not used by the portable implementation because
@@ -51,3 +56,15 @@ Set `BUSYBOX` to use a specific BusyBox binary:
 ```sh
 BUSYBOX=/path/to/busybox sh scripts/tetra-mask.sh FILE1 FILE2 FILE3 FILE4
 ```
+
+## Browser Projection
+
+The dependency-free prototype is under `web/`. Serve it with BusyBox so the
+module loads as an HTTP resource:
+
+```sh
+busybox httpd -f -p 8080 -h web
+```
+
+Open `http://127.0.0.1:8080/`. `tests/check-web.sh` checks the static API
+surface; browser execution still requires a browser with the relevant APIs.

@@ -194,6 +194,16 @@ but it is not authentication. UDP does not make a browser-accessible custom
 options channel, and a browser audio or animation clock is not automatically a
 hardware clock.
 
+The dependency-free browser projection under `web/` now wires the tested state
+law into an `OfflineAudioContext`, an `OffscreenCanvas` fallback, metadata
+`VTTCue` records, `DOMMatrix`, and a Shadow DOM custom element. The shell check
+only verifies that those API surfaces are present in the source; it does not
+replace browser execution or timing tests.
+
+The HTTP/1.1 status arrays in `tests/http11-status-literals.txt` are likewise
+protocol vocabulary for content-negotiation experiments only. They are not
+authentication, trust, or agent identity proofs.
+
 ## 9. Reproduce the Whole Walkthrough
 
 Use the BusyBox shell explicitly:
