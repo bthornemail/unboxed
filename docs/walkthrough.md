@@ -40,16 +40,22 @@ comparable`.
 
 ## 2. Use Real Byte Data
 
-When supplied, the repository includes three BusyBox inventory artifacts:
+The chat used three BusyBox inventory artifacts, which are optional and can be
+regenerated on demand:
 
 - `full`: path-qualified output from `busybox --list-full`
 - `list`: applet names from `busybox --list`
 - `full_list`: an existing raw-byte experiment assembled from numbered and
   reversed command output
 
-They are intentionally preserved as artifacts. The test harness does not
-rewrite or normalize them, and skips the artifact-specific check if they are
-absent from a checkout.
+They are experiment outputs, not implementation source. Regenerate them with:
+
+```sh
+busybox --list-full > full; busybox --list > list; busybox cat -An full > full_list
+```
+
+The test harness does not rewrite or normalize them, and skips the
+artifact-specific check if they are absent from a checkout.
 
 For an exploratory comparison:
 

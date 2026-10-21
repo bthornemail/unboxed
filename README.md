@@ -24,10 +24,16 @@ HTTP/1.1 content-negotiation experiments. `tests/check-http11-status.sh`
 validates its arrays with BusyBox regular expressions only; the codes are not
 authentication or trust signals.
 
-The optional `full`, `list`, and `full_list` files are preserved as raw-byte
-artifacts when supplied. They are inputs for experiments, not generated source
-code. The original `diff -y` pipeline is not used by the portable
-implementation because BusyBox `diff` does not provide the `-y` option.
+The optional `full`, `list`, and `full_list` files are raw-byte experiment
+outputs, not generated source code. Regenerate them in one BusyBox shell line
+when needed:
+
+```sh
+busybox --list-full > full; busybox --list > list; busybox cat -An full > full_list
+```
+
+The original `diff -y` pipeline is not used by the portable implementation
+because BusyBox `diff` does not provide the `-y` option.
 
 ## Run
 
