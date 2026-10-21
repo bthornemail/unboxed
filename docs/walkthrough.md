@@ -41,23 +41,23 @@ comparable`.
 ## 2. Use Real Byte Data
 
 The chat used three BusyBox inventory artifacts to demonstrate a static,
-three-layer reference index or lookup table. They are optional and can be
-regenerated on demand:
+three-layer visual template. They are optional and can be regenerated on
+demand:
 
 - `full`: path-qualified output from `busybox --list-full`
 - `list`: applet names from `busybox --list`
-- `full_list`: the reversed comparison as the center layer, surrounded by the
-  annotated `full` and `list` layers
+- `full_list`: the reversed comparison as a center view, surrounded by the
+  annotated `full` and `list` views
 
-They are reference-index outputs, not implementation source. Regenerate the
-three-layer frame with:
+They are visual-template outputs, not implementation source or a proven lookup
+table. Regenerate the three-layer frame with:
 
 ```sh
 sh scripts/build-reference-index.sh
 ```
 
 The center layer uses `diff -y` followed by `rev`. BusyBox `diff` does not
-implement `-y`, so this optional reference-index generator requires a compatible
+implement `-y`, so this optional visual-template generator requires a compatible
 `diff` binary through `DIFF`; the core BusyBox analyzer remains independent.
 
 The test harness does not rewrite or normalize them, and skips the

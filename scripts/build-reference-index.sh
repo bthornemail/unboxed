@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# Build the three-layer BusyBox reference index:
-#   outer layer: full
-#   center:      reversed side-by-side comparison
-#   outer layer: list
-# The result is a static text/LUT artifact for inspection, not analyzer input.
+# Build the three-layer BusyBox visual template:
+#   outer view: full
+#   center view: reversed side-by-side comparison
+#   outer view: list
+# The result is a display artifact for inspection, not analyzer input or a
+# formally defined lookup table.
 
 set -eu
 

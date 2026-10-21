@@ -105,20 +105,22 @@ an implicit trust mechanism.
 a reference; it does not authenticate a sender or prevent replay, forgery, or
 tampering. The repository does not implement the proposed UDP option format.
 
-### 7. BusyBox Inventory and Encapsulated Frames
+### 7. BusyBox Inventory and Visual Template
 
 **Transcript:** lines 747-877.
 
 **Conversation:** BusyBox `--list-full` and `--list` outputs are captured as
-`full` and `list`; an annotated `full_list` view demonstrates line numbers and
-control-character markers. The chat then interprets selected reversed names as
-six-, five-, and four-character command frames.
+`full` and `list`; an annotated `full_list` view demonstrates line numbers,
+control-character markers, and a reversed comparison view. The chat then
+interprets selected reversed names as six-, five-, and four-character command
+frames.
 
 **Claims:** The inventory can be captured as raw artifacts; selected strings
 form meaningful fallback frames.
 
-**Status:** The reference-index construction is **Observed** when generated;
-the six/five/four-character semantic mapping is **Speculative**. The portable
+**Status:** The three-layer display is **Observed** when generated; it is a
+visual template, not proof of a LUT, binary mask, or semantic mapping. The
+six/five/four-character interpretation is **Speculative**. The portable
 analyzer deliberately does not depend on `diff -y`, which is not available in
 the BusyBox version tested here.
 

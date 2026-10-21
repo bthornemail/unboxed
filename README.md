@@ -24,11 +24,12 @@ HTTP/1.1 content-negotiation experiments. `tests/check-http11-status.sh`
 validates its arrays with BusyBox regular expressions only; the codes are not
 authentication or trust signals.
 
-The optional `full`, `list`, and `full_list` files demonstrate the reference
-index structure as a static three-layer lookup table: `full` and `list` are the
-outer layers, while `full_list` contains the reversed comparison as the center
-LUT/mask with line-number and control-character markers. They are not generated
-source code. Regenerate the reference index with:
+The optional `full`, `list`, and `full_list` files demonstrate a visual
+three-layer template: `full` and `list` are the outer views, while `full_list`
+contains their reversed comparison as a center view with line-number and
+control-character markers. This is a display structure, not a claimed LUT,
+binary mask, or semantic index. They are not generated source code. Regenerate
+the visual template with:
 
 ```sh
 sh scripts/build-reference-index.sh
