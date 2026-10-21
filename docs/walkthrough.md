@@ -40,7 +40,7 @@ comparable`.
 
 ## 2. Use Real Byte Data
 
-The repository includes three BusyBox inventory artifacts:
+When supplied, the repository includes three BusyBox inventory artifacts:
 
 - `full`: path-qualified output from `busybox --list-full`
 - `list`: applet names from `busybox --list`
@@ -48,7 +48,8 @@ The repository includes three BusyBox inventory artifacts:
   reversed command output
 
 They are intentionally preserved as artifacts. The test harness does not
-rewrite or normalize them.
+rewrite or normalize them, and skips the artifact-specific check if they are
+absent from a checkout.
 
 For an exploratory comparison:
 
@@ -179,11 +180,11 @@ display pipeline must not be mistaken for a byte-level measurement.
 
 ## 8. What the BusyBox Tests Do Not Establish
 
-The following ideas require separate environments and are deliberately not
-reported as verified by this project:
+The following runtime behaviors require separate environments and are
+deliberately not reported as verified by this project:
 
 ```text
-MANUAL  Web Audio, browser rendering, WebRTC, PiP, and pointer interaction
+MANUAL  Browser audio execution, rendering, WebRTC, PiP, and pointer interaction
 MANUAL  ESP32 GPIO/ADC, breadboard voltage levels, MIDI, Serial, and BLE
 MANUAL  UDP transport, antenna matching, RF, and acoustic time-of-flight
 MANUAL  LLM context integration and 144-agent visualization semantics
@@ -194,15 +195,15 @@ but it is not authentication. UDP does not make a browser-accessible custom
 options channel, and a browser audio or animation clock is not automatically a
 hardware clock.
 
-The dependency-free browser projection under `web/` now wires the tested state
-law into an `OfflineAudioContext`, an `OffscreenCanvas` fallback, metadata
-`VTTCue` records, `DOMMatrix`, and a Shadow DOM custom element. The shell check
-only verifies that those API surfaces are present in the source; it does not
-replace browser execution or timing tests.
+The dependency-free browser projection under `web/` wires the tested state law
+into an `OfflineAudioContext`, an `OffscreenCanvas` fallback, metadata `VTTCue`
+records, `DOMMatrix`, and a Shadow DOM custom element. `tests/check-web.sh`
+verifies that those API surfaces are present in the source; it does not replace
+browser execution or timing tests.
 
 The HTTP/1.1 status arrays in `tests/http11-status-literals.txt` are likewise
-protocol vocabulary for content-negotiation experiments only. They are not
-authentication, trust, or agent identity proofs.
+syntax-checked protocol vocabulary for content-negotiation experiments only.
+They are not authentication, trust, or agent identity proofs.
 
 ## 9. Reproduce the Whole Walkthrough
 
@@ -223,6 +224,10 @@ checks every 16-bit state and takes longer in a shell-only environment. It
 reports `FACT` for claims that pass, `OBSERVED` for measured structure, `FAIL`
 for a claim that does not match the implementation, and `MANUAL` for
 integrations outside this shell harness.
+
+The fast suite also runs the static browser API check and the HTTP/1.1 literal
+array check. Those checks validate source vocabulary and structure, not browser
+behavior or protocol negotiation.
 
 That reporting format is intentional: the walkthrough validates the narrative
 while it is being written, and preserves the difference between a proof, an

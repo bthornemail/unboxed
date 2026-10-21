@@ -169,10 +169,11 @@ reinterpreted as spatial agent states and negotiation indices.
 **Claims:** HTTP status values can serve as the state protocol for the agent
 model.
 
-**Status:** The numeric class grouping is **Observed** from HTTP conventions.
-The negotiation, trust, and geometric meanings are **Speculative** and are not
-implemented or validated here. HTTP status codes do not provide authentication
-by themselves.
+**Status:** The numeric class grouping is **Observed** from HTTP conventions,
+and the repository has a regex-checked literal vocabulary in
+`tests/http11-status-literals.txt`. The negotiation, trust, and geometric
+meanings are **Speculative** and are not implemented or validated here. HTTP
+status codes do not provide authentication by themselves.
 
 ### 11. Minimal Quotient and the 16-Bit Law
 
@@ -341,3 +342,10 @@ that witness open for a separate proof. No example claim corpus is bundled.
 Everything after that kernel is a proposed adapter or projection. The correct
 next step is to add one independently testable adapter at a time, not to treat
 the full chat transcript as a single already-proven system.
+
+Two structural projections now sit outside that kernel:
+
+- `web/` has a static browser projection whose API surface is checked, while
+  browser execution and timing remain unverified.
+- `tests/http11-status-literals.txt` has a regex-checked status vocabulary,
+  while content negotiation and trust semantics remain unverified.

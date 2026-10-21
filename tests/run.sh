@@ -30,16 +30,19 @@ assert_contains '  mask:       05010181'
 
 printf '%s\n' 'PASS: tetra-mask control-byte fixtures'
 
-# The supplied BusyBox inventory is a deliberately uneven fourth vertex for
-# the analyzer. Verify that unequal lengths are reported without truncation.
-UNEQUAL=$($BUSYBOX sh "$ROOT/scripts/tetra-mask.sh" \
-    "$ROOT/full" "$ROOT/list" "$ROOT/full_list" "$ROOT/README.md")
-printf '%s\n' "$UNEQUAL" | "$BUSYBOX" grep -F 'not comparable' >/dev/null || {
-    printf 'FAIL: unequal inventory lengths were not reported\n' >&2
-    exit 1
-}
-
-printf '%s\n' 'PASS: unequal raw-byte vertices are not compared'
+# If the supplied BusyBox inventory artifacts are present, verify their length
+# mismatch without truncation. They are optional experiment inputs.
+if [ -r "$ROOT/full" ] && [ -r "$ROOT/list" ] && [ -r "$ROOT/full_list" ]; then
+    UNEQUAL=$($BUSYBOX sh "$ROOT/scripts/tetra-mask.sh" \
+        "$ROOT/full" "$ROOT/list" "$ROOT/full_list" "$ROOT/README.md")
+    printf '%s\n' "$UNEQUAL" | "$BUSYBOX" grep -F 'not comparable' >/dev/null || {
+        printf 'FAIL: unequal raw-byte vertices were not reported\n' >&2
+        exit 1
+    }
+    printf '%s\n' 'PASS: unequal raw-byte vertices are not compared'
+else
+    printf '%s\n' 'SKIP: supplied full/list/full_list artifacts are absent'
+fi
 
 "$BUSYBOX" sh "$ROOT/tests/check-web.sh"
 "$BUSYBOX" sh "$ROOT/tests/check-http11-status.sh"
