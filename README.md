@@ -25,14 +25,18 @@ validates its arrays with BusyBox regular expressions only; the codes are not
 authentication or trust signals.
 
 The optional `full`, `list`, and `full_list` files demonstrate the reference
-index structure: path-qualified BusyBox applets, short applet names, and an
-annotated line-number/control-character view. They are not generated source
-code. Regenerate the basic reference index in one BusyBox shell line when
-needed:
+index structure as a static three-layer lookup table: `full` and `list` are the
+outer layers, while `full_list` contains the reversed comparison as the center
+LUT/mask with line-number and control-character markers. They are not generated
+source code. Regenerate the reference index with:
 
 ```sh
-busybox --list-full > full; busybox --list > list; busybox cat -An full list > full_list
+sh scripts/build-reference-index.sh
 ```
+
+The center layer requires a `diff` implementation with `-y` (for example GNU
+diff); BusyBox `diff` does not provide that option. Set `DIFF=/path/to/diff` if
+needed. This optional display dependency does not affect the BusyBox analyzer.
 
 The original `diff -y` pipeline is not used by the portable implementation
 because BusyBox `diff` does not provide the `-y` option.
