@@ -33,6 +33,7 @@ printf '%s\n' 'PASS: tetra-mask control-byte fixtures'
 # If the supplied BusyBox inventory artifacts are present, verify their length
 # mismatch without truncation. They are optional experiment inputs.
 if [ -r "$ROOT/full" ] && [ -r "$ROOT/list" ] && [ -r "$ROOT/full_list" ]; then
+    "$BUSYBOX" sh "$ROOT/tests/check-reference-index.sh" "$ROOT"
     UNEQUAL=$($BUSYBOX sh "$ROOT/scripts/tetra-mask.sh" \
         "$ROOT/full" "$ROOT/list" "$ROOT/full_list" "$ROOT/README.md")
     printf '%s\n' "$UNEQUAL" | "$BUSYBOX" grep -F 'not comparable' >/dev/null || {

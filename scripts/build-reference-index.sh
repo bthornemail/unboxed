@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Build the three-layer BusyBox visual template:
+# Build the three-layer BusyBox scalable lookup-table template:
 #   outer view: full
 #   center view: reversed side-by-side comparison
 #   outer view: list
-# The result is a display artifact for inspection, not analyzer input or a
-# formally defined lookup table.
+# The result defines a scalable table shape for inspection, not analyzer input
+# or proof of the semantics assigned to any entry.
 
 set -eu
 

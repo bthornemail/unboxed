@@ -118,8 +118,9 @@ frames.
 **Claims:** The inventory can be captured as raw artifacts; selected strings
 form meaningful fallback frames.
 
-**Status:** The three-layer display is **Observed** when generated; it is a
-visual template, not proof of a LUT, binary mask, or semantic mapping. The
+**Status:** The three-layer display is **Observed** when generated, and its
+construction provides a scalable lookup-table shape across the three views.
+That shape does not by itself prove a binary mask or semantic mapping. The
 six/five/four-character interpretation is **Speculative**. The portable
 analyzer deliberately does not depend on `diff -y`, which is not available in
 the BusyBox version tested here.

@@ -24,12 +24,12 @@ HTTP/1.1 content-negotiation experiments. `tests/check-http11-status.sh`
 validates its arrays with BusyBox regular expressions only; the codes are not
 authentication or trust signals.
 
-The optional `full`, `list`, and `full_list` files demonstrate a visual
-three-layer template: `full` and `list` are the outer views, while `full_list`
-contains their reversed comparison as a center view with line-number and
-control-character markers. This is a display structure, not a claimed LUT,
-binary mask, or semantic index. They are not generated source code. Regenerate
-the visual template with:
+The optional `full`, `list`, and `full_list` files demonstrate a scalable
+three-layer lookup-table template: `full` and `list` are the outer views,
+while `full_list` contains their reversed comparison as a center view with
+line-number and control-character markers. The construction defines the table
+shape; the meaning assigned to individual entries remains a separate claim.
+They are not generated source code. Regenerate the template with:
 
 ```sh
 sh scripts/build-reference-index.sh
@@ -38,6 +38,8 @@ sh scripts/build-reference-index.sh
 The center layer requires a `diff` implementation with `-y` (for example GNU
 diff); BusyBox `diff` does not provide that option. Set `DIFF=/path/to/diff` if
 needed. This optional display dependency does not affect the BusyBox analyzer.
+When the three files are present, `tests/check-reference-index.sh` validates
+their cross-frame visual grammar with BusyBox regular expressions.
 
 The original `diff -y` pipeline is not used by the portable implementation
 because BusyBox `diff` does not provide the `-y` option.

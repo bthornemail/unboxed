@@ -40,8 +40,8 @@ comparable`.
 
 ## 2. Use Real Byte Data
 
-The chat used three BusyBox inventory artifacts to demonstrate a static,
-three-layer visual template. They are optional and can be regenerated on
+The chat used three BusyBox inventory artifacts to demonstrate a scalable,
+three-layer lookup-table template. They are optional and can be regenerated on
 demand:
 
 - `full`: path-qualified output from `busybox --list-full`
@@ -49,8 +49,10 @@ demand:
 - `full_list`: the reversed comparison as a center view, surrounded by the
   annotated `full` and `list` views
 
-They are visual-template outputs, not implementation source or a proven lookup
-table. Regenerate the three-layer frame with:
+They are lookup-table shape outputs, not implementation source. The construction
+logic establishes how the table scales across the three views; the semantic
+meaning of entries still requires separate validation. Regenerate the
+three-layer frame with:
 
 ```sh
 sh scripts/build-reference-index.sh
@@ -62,6 +64,11 @@ implement `-y`, so this optional visual-template generator requires a compatible
 
 The test harness does not rewrite or normalize them, and skips the
 artifact-specific check if they are absent from a checkout.
+
+When present, `tests/check-reference-index.sh` checks the three-frame grammar
+with BusyBox regular expressions: token lines, `cat -An` markers, the reversed
+side-by-side center, and both outer-view forms. It validates the shape of the
+template, not the meaning of its entries.
 
 For an exploratory comparison:
 
