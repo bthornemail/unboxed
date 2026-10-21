@@ -14,9 +14,10 @@ and proof map of the archived conversation.
 - differing-byte count
 - differing-bit popcount
 
-The first-principles witness layer is `tests/probe-literals.sh`. It uses only
-BusyBox regular expressions against tagged literal bit sequences; it does not
-recompute values or call the analyzer.
+The first-principles template checker is `tests/probe-literals.sh`. Give it a
+claim file when one is intentionally defined; it uses only BusyBox regular
+expressions against tagged literal bit sequences and does not recompute values
+or call the analyzer.
 
 The existing `full`, `list`, and `full_list` files are preserved as raw-byte
 artifacts. They are inputs for experiments, not generated source code. The

@@ -83,27 +83,14 @@ PASS: unequal raw-byte vertices are not compared
 This is the smallest complete demonstration of the tetrahedron model.
 
 For a first-principles check that does not reuse the analyzer's arithmetic, run
-the literal witness probe:
+the literal template checker against a deliberately defined claim file:
 
 ```sh
-busybox ash tests/probe-literals.sh
+busybox ash tests/probe-literals.sh path/to/tagged-claims.txt
 ```
 
-It accepts only tagged binary records with fixed-width regular expressions.
-For example, the Fano witness is recorded literally as:
-
-```text
-FANO_CLOSURE_BYTE22 0010110=>1111111
-```
-
-The probe validates transcription, tags, widths, and exact witnesses. It does
-not by itself prove why the transition is correct; that interpretation remains
-a separate claim to test from an independent derivation.
-
-The literal corpus also records the seven Fano lines, all 16 named Fano
-constants, an 8-bit reversal witness, and a 16-bit endianness-swap witness.
-These are templates for checking logical structure, not replacements for
-arithmetic derivations.
+It accepts only tagged binary records with fixed-width regular expressions. The
+checker validates tags and widths, not the derivation or meaning of a claim.
 
 ## 4. Test the 16-Bit State Law
 

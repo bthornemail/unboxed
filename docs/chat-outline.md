@@ -332,11 +332,11 @@ raw bytes -> six XOR edges -> bit counts
 1/73 -> 01369863 repeating block
 ```
 
-The independent literal layer is `tests/probe-literals.sh`. It checks tagged
-fixed-width witnesses with BusyBox regular expressions only. It is deliberately
-weaker than recomputation: it proves that a stated witness is well-formed and
-matches the recorded literal, while leaving the derivation of that witness
-open for a separate proof.
+The independent literal layer is `tests/probe-literals.sh`. Given an
+intentionally defined claim file, it checks tagged fixed-width witnesses with
+BusyBox regular expressions only. It is deliberately weaker than recomputation:
+it proves that a stated witness is well-formed, while leaving the derivation of
+that witness open for a separate proof. No example claim corpus is bundled.
 
 Everything after that kernel is a proposed adapter or projection. The correct
 next step is to add one independently testable adapter at a time, not to treat
