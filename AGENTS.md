@@ -8,6 +8,8 @@
 - `web/index.html` and `web/agent-commons.js` are a dependency-free browser projection; `tests/check-web.sh` is only a static API-surface check, not browser execution proof.
 - `tests/http11-status-literals.txt` and `tests/check-http11-status.sh` are literal protocol vocabulary checks; HTTP status codes must not be presented as authentication or trust proofs.
 - `tests/check-reference-index.sh` checks the `full`/`list`/`full_list` visual frame grammar with BusyBox regular expressions; it validates shape, not applet semantics or arithmetic.
+- `tests/check-16bit-buffer.sh` checks the 65,536-byte buffer invariant; this is structural self-validation, not cryptographic authentication.
+- `tests/check-xor-xnor.sh` validates only the per-byte XOR/XNOR complement relation; do not expand it into an authentication claim.
 - `docs/rfc-transport-notes.md` is the repository's verified boundary for RFC 4113, RFC 9868, and RFC 2675; do not infer browser UDP access, discovery, or authentication from those standards.
 - The analyzer must not pad or truncate unequal files. Report those edges as not comparable.
 - `_archive/` is untracked historical material, not an implementation source tree. Preserve it unless the task explicitly concerns the archive, and do not infer current architecture or requirements from its contents.

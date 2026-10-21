@@ -224,6 +224,23 @@ The HTTP/1.1 status arrays in `tests/http11-status-literals.txt` are likewise
 syntax-checked protocol vocabulary for content-negotiation experiments only.
 They are not authentication, trust, or agent identity proofs.
 
+The 16-bit domain also has a structural buffer check:
+
+```sh
+busybox ash tests/check-16bit-buffer.sh FILE
+```
+
+It accepts exactly 65,536 bytes. This is useful self-validation of frame shape
+and bounds, but it is not cryptographic self-authentication.
+
+The corresponding logic-only check is:
+
+```sh
+busybox ash tests/check-xor-xnor.sh FILE1 FILE2
+```
+
+It validates only the byte-level complement relation `xor ^ xnor = 0xff`.
+
 See [`rfc-transport-notes.md`](rfc-transport-notes.md) for the transport
 standards boundary. RFC 9868 supports UDP transport options in an IP surplus
 area, RFC 4113 describes UDP endpoint management, and RFC 2675 addresses IPv6

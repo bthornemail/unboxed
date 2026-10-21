@@ -16,6 +16,14 @@ verified UDP and IPv6 standards boundary.
 - differing-byte count
 - differing-bit popcount
 
+The 16-bit state-space buffer invariant is checked separately by
+`tests/check-16bit-buffer.sh`: a supplied buffer must contain exactly 65,536
+bytes. This validates frame shape and bounds; it does not authenticate a
+sender.
+
+`tests/check-xor-xnor.sh` validates the narrower byte-level relation
+`xor ^ xnor = 0xff` for equal-length inputs.
+
 The first-principles template checker is `tests/probe-literals.sh`. Give it a
 claim file when one is intentionally defined; it uses only BusyBox regular
 expressions against tagged literal bit sequences and does not recompute values

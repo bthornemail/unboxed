@@ -36,6 +36,12 @@ in this project cannot replace that mechanism or provide sender authenticity.
 The browser prototype cannot inject UDP transport trailers directly; a native
 UDP endpoint, operating-system service, or gateway would be required.
 
+The repository's 65,536-byte check is a different property: it validates the
+buffer length implied by the 16-bit state space. A valid length or valid state
+orbit can reject malformed input, but it cannot prove who sent the input.
+The narrower `tests/check-xor-xnor.sh` check validates only the byte relation
+`xor ^ xnor = 0xff`.
+
 ## RFC 2675: IPv6 Jumbograms
 
 [RFC 2675](https://www.rfc-editor.org/rfc/rfc2675) defines IPv6 Jumbo Payload

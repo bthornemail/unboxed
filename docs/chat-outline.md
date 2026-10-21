@@ -361,3 +361,8 @@ Two structural projections now sit outside that kernel:
 The supplied standards references are summarized in
 [`rfc-transport-notes.md`](rfc-transport-notes.md). They provide protocol
 constraints and terminology, not an implementation of UDP, MQTT, or WebRTC.
+
+The 65,536-state/byte-length claim is now checked as a structural invariant by
+`tests/check-16bit-buffer.sh`. It should be described as self-validating frame
+shape, not as sender authentication; an attacker can construct a correctly
+sized or otherwise valid-looking frame without possessing an identity key.

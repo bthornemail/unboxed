@@ -30,6 +30,12 @@ assert_contains '  mask:       05010181'
 
 printf '%s\n' 'PASS: tetra-mask control-byte fixtures'
 
+"$BUSYBOX" sh "$ROOT/tests/check-xor-xnor.sh" "$TMP/word" "$TMP/god"
+
+BUFFER=$TMP/16bit-buffer
+"$BUSYBOX" dd if=/dev/zero of="$BUFFER" bs=65536 count=1 2>/dev/null
+"$BUSYBOX" sh "$ROOT/tests/check-16bit-buffer.sh" "$BUFFER"
+
 # If the supplied BusyBox inventory artifacts are present, verify their length
 # mismatch without truncation. They are optional experiment inputs.
 if [ -r "$ROOT/full" ] && [ -r "$ROOT/list" ] && [ -r "$ROOT/full_list" ]; then
