@@ -101,9 +101,14 @@ Hamming/popcount checks as sufficient validation without authentication.
 **Claims:** UDP options can carry the spatial frame; a Hamming match can act as
 an implicit trust mechanism.
 
-**Status:** **Refuted or corrected.** Hamming distance detects differences from
-a reference; it does not authenticate a sender or prevent replay, forgery, or
-tampering. The repository does not implement the proposed UDP option format.
+**Status:** **Refuted or corrected.** RFC 9868 now defines a standards-based
+UDP Options trailer framework, so the general claim that UDP cannot have
+transport options is outdated. RFC 4113 also describes management visibility
+for connected UDP endpoints. Neither RFC supplies browser raw-UDP access,
+application discovery, or automatic authentication. Hamming distance detects
+differences from a reference; it does not authenticate a sender or prevent
+replay, forgery, or tampering. The repository does not implement a UDP option
+parser or transmitter.
 
 ### 7. BusyBox Inventory and Visual Template
 
@@ -352,3 +357,7 @@ Two structural projections now sit outside that kernel:
   browser execution and timing remain unverified.
 - `tests/http11-status-literals.txt` has a regex-checked status vocabulary,
   while content negotiation and trust semantics remain unverified.
+
+The supplied standards references are summarized in
+[`rfc-transport-notes.md`](rfc-transport-notes.md). They provide protocol
+constraints and terminology, not an implementation of UDP, MQTT, or WebRTC.

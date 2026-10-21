@@ -8,6 +8,8 @@ See [`docs/walkthrough.md`](docs/walkthrough.md) for the public narrative and
 the evidence-backed walkthrough.
 See [`docs/chat-outline.md`](docs/chat-outline.md) for the chronological claim
 and proof map of the archived conversation.
+See [`docs/rfc-transport-notes.md`](docs/rfc-transport-notes.md) for the
+verified UDP and IPv6 standards boundary.
 
 - byte length
 - byte-wise XOR mask

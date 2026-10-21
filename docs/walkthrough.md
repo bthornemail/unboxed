@@ -224,6 +224,12 @@ The HTTP/1.1 status arrays in `tests/http11-status-literals.txt` are likewise
 syntax-checked protocol vocabulary for content-negotiation experiments only.
 They are not authentication, trust, or agent identity proofs.
 
+See [`rfc-transport-notes.md`](rfc-transport-notes.md) for the transport
+standards boundary. RFC 9868 supports UDP transport options in an IP surplus
+area, RFC 4113 describes UDP endpoint management, and RFC 2675 addresses IPv6
+jumbograms. None of these standards supplies browser raw-UDP access or turns a
+status-code, Hamming, or lookup-table match into authentication.
+
 ## 9. Reproduce the Whole Walkthrough
 
 Use the BusyBox shell explicitly:
