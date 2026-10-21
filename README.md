@@ -1,1 +1,52 @@
 # unboxed
+
+This is a small BusyBox/POSIX-shell test project for the raw-byte tetrahedron
+idea. Four files are treated as vertices. The harness evaluates all six
+unordered edges without padding or truncating unequal files:
+
+See [`docs/walkthrough.md`](docs/walkthrough.md) for the public narrative and
+the evidence-backed walkthrough.
+See [`docs/chat-outline.md`](docs/chat-outline.md) for the chronological claim
+and proof map of the archived conversation.
+
+- byte length
+- byte-wise XOR mask
+- differing-byte count
+- differing-bit popcount
+
+The first-principles witness layer is `tests/probe-literals.sh`. It uses only
+BusyBox regular expressions against tagged literal bit sequences; it does not
+recompute values or call the analyzer.
+
+The existing `full`, `list`, and `full_list` files are preserved as raw-byte
+artifacts. They are inputs for experiments, not generated source code. The
+original `diff -y` pipeline is not used by the portable implementation because
+BusyBox `diff` does not provide the `-y` option.
+
+## Run
+
+Requirements: BusyBox with `ash`, `od`, `tr`, `grep`, `wc`, `paste`, `printf`,
+`mktemp`, and `rm`.
+
+```sh
+sh tests/run.sh
+```
+
+Run the longer exhaustive narrative probes separately:
+
+```sh
+RUN_IDEA_PROBES=1 BUSYBOX=busybox busybox ash tests/run.sh
+```
+
+Run the analyzer directly:
+
+```sh
+sh scripts/tetra-mask.sh full list full_list README.md
+sh scripts/tetra-mask.sh -v full list full_list README.md
+```
+
+Set `BUSYBOX` to use a specific BusyBox binary:
+
+```sh
+BUSYBOX=/path/to/busybox sh scripts/tetra-mask.sh FILE1 FILE2 FILE3 FILE4
+```
