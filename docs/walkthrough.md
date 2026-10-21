@@ -40,18 +40,19 @@ comparable`.
 
 ## 2. Use Real Byte Data
 
-The chat used three BusyBox inventory artifacts, which are optional and can be
-regenerated on demand:
+The chat used three BusyBox inventory artifacts to demonstrate a reference
+index structure. They are optional and can be regenerated on demand:
 
 - `full`: path-qualified output from `busybox --list-full`
 - `list`: applet names from `busybox --list`
-- `full_list`: an existing raw-byte experiment assembled from numbered and
-  reversed command output
+- `full_list`: an annotated view with line numbers and control-character
+  markers
 
-They are experiment outputs, not implementation source. Regenerate them with:
+They are reference-index outputs, not implementation source. Regenerate the
+basic two-view frame with:
 
 ```sh
-busybox --list-full > full; busybox --list > list; busybox cat -An full > full_list
+busybox --list-full > full; busybox --list > list; busybox cat -An full list > full_list
 ```
 
 The test harness does not rewrite or normalize them, and skips the

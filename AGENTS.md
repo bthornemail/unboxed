@@ -9,5 +9,5 @@
 - `tests/http11-status-literals.txt` and `tests/check-http11-status.sh` are literal protocol vocabulary checks; HTTP status codes must not be presented as authentication or trust proofs.
 - The analyzer must not pad or truncate unequal files. Report those edges as not comparable.
 - `_archive/` is untracked historical material, not an implementation source tree. Preserve it unless the task explicitly concerns the archive, and do not infer current architecture or requirements from its contents.
-- `full`, `list`, and `full_list` are optional raw-byte experiment outputs. They can be regenerated on demand and are not required for the core tests.
+- `full`, `list`, and `full_list` are optional reference-index demonstrations: they show BusyBox paths, applet names, line numbers, and control-character markers. Regenerate them on demand; they are not required for the core tests.
 - Check `git status --short` before and after work; unrelated archive and artifact changes may be present.

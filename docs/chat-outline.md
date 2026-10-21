@@ -110,17 +110,17 @@ tampering. The repository does not implement the proposed UDP option format.
 **Transcript:** lines 747-877.
 
 **Conversation:** BusyBox `--list-full` and `--list` outputs are captured as
-`full` and `list`; a numbered/reversed composite is saved as `full_list`.
-The chat then interprets selected reversed names as six-, five-, and
-four-character command frames.
+`full` and `list`; an annotated `full_list` view demonstrates line numbers and
+control-character markers. The chat then interprets selected reversed names as
+six-, five-, and four-character command frames.
 
 **Claims:** The inventory can be captured as raw artifacts; selected strings
 form meaningful fallback frames.
 
-**Status:** The presence and byte contents of the supplied artifacts are
-**Observed**. The six/five/four-character semantic mapping is **Speculative**.
-The portable analyzer deliberately does not depend on `diff -y`, which is not
-available in the BusyBox version tested here.
+**Status:** The reference-index construction is **Observed** when generated;
+the six/five/four-character semantic mapping is **Speculative**. The portable
+analyzer deliberately does not depend on `diff -y`, which is not available in
+the BusyBox version tested here.
 
 ### 8. BusyBox as a Single Function and `tr`
 
