@@ -10,7 +10,7 @@
 - `tests/check-reference-index.sh` checks the `full`/`list`/`full_list` visual frame grammar with BusyBox regular expressions; it validates shape, not applet semantics or arithmetic.
 - `tests/check-16bit-buffer.sh` checks the 65,536-byte buffer invariant; this is structural self-validation, not cryptographic authentication.
 - `tests/check-xor-xnor.sh` validates only the per-byte XOR/XNOR complement relation; do not expand it into an authentication claim.
-- `docs/rfc-transport-notes.md` is the repository's verified boundary for RFC 4113, RFC 9868, and RFC 2675; do not infer browser UDP access, discovery, or authentication from those standards.
+- `docs/rfc-transport-notes.md` is the repository's verified boundary for RFC 4113, RFC 8085, RFC 9868, and RFC 2675; do not infer browser UDP access, discovery, or authentication from those standards.
 - The analyzer must not pad or truncate unequal files. Report those edges as not comparable.
 - `_archive/` is untracked historical material, not an implementation source tree. Preserve it unless the task explicitly concerns the archive, and do not infer current architecture or requirements from its contents.
 - `full`, `list`, and `full_list` are optional scalable lookup-table templates: `full` and `list` are the outer views, and `full_list` contains the reversed comparison between them. Regenerate them on demand with `scripts/build-reference-index.sh`; they are not required for the core tests.

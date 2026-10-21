@@ -243,9 +243,10 @@ It validates only the byte-level complement relation `xor ^ xnor = 0xff`.
 
 See [`rfc-transport-notes.md`](rfc-transport-notes.md) for the transport
 standards boundary. RFC 9868 supports UDP transport options in an IP surplus
-area, RFC 4113 describes UDP endpoint management, and RFC 2675 addresses IPv6
-jumbograms. None of these standards supplies browser raw-UDP access or turns a
-status-code, Hamming, or lookup-table match into authentication.
+area, RFC 4113 describes UDP endpoint management, RFC 2675 addresses IPv6
+jumbograms, and RFC 8085 covers port selection and off-path injection defenses.
+None of these standards supplies browser raw-UDP access or turns a status-code,
+Hamming, lookup-table, source-port, or XOR/XNOR match into authentication.
 
 ## 9. Reproduce the Whole Walkthrough
 

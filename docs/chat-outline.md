@@ -108,7 +108,8 @@ for connected UDP endpoints. Neither RFC supplies browser raw-UDP access,
 application discovery, or automatic authentication. Hamming distance detects
 differences from a reference; it does not authenticate a sender or prevent
 replay, forgery, or tampering. The repository does not implement a UDP option
-parser or transmitter.
+parser or transmitter. RFC 8085's randomized-port and address/port-check
+guidance can reduce off-path injection, but it is not authentication.
 
 ### 7. BusyBox Inventory and Visual Template
 
@@ -358,7 +359,8 @@ Two structural projections now sit outside that kernel:
 - `tests/http11-status-literals.txt` has a regex-checked status vocabulary,
   while content negotiation and trust semantics remain unverified.
 
-The supplied standards references are summarized in
+The supplied standards references, including RFC 8085's UDP security guidance,
+are summarized in
 [`rfc-transport-notes.md`](rfc-transport-notes.md). They provide protocol
 constraints and terminology, not an implementation of UDP, MQTT, or WebRTC.
 

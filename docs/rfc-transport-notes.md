@@ -3,6 +3,10 @@
 These notes anchor the transport discussion to the supplied RFCs rather than
 the generated chat narrative.
 
+The UDP security and port guidance below follows [RFC
+8085](https://www.rfc-editor.org/rfc/rfc8085), which is the source of the port
+and off-path-injection excerpt used in the discussion.
+
 ## RFC 4113: UDP Management
 
 [RFC 4113](https://www.rfc-editor.org/rfc/rfc4113) defines the UDP Management
@@ -35,6 +39,18 @@ The RFC reserves option kind 9 for authentication. A Hamming or popcount match
 in this project cannot replace that mechanism or provide sender authenticity.
 The browser prototype cannot inject UDP transport trailers directly; a native
 UDP endpoint, operating-system service, or gateway would be required.
+
+## RFC 8085: UDP Usage and Off-Path Injection
+
+RFC 8085 recommends that UDP applications avoid source port zero, use a
+source-port value that is difficult for an off-path attacker to guess, and
+perform receiver-side address and port checks. A randomized source port or
+another randomized payload field can reduce off-path injection opportunities.
+
+That is not self-authentication. RFC 8085 states that UDP does not provide
+communications security and recommends established end-to-end mechanisms such
+as IPsec or DTLS when authentication, integrity, or confidentiality are needed.
+The source port is an input to an application defense, not an identity proof.
 
 The repository's 65,536-byte check is a different property: it validates the
 buffer length implied by the 16-bit state space. A valid length or valid state
