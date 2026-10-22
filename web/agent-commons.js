@@ -205,6 +205,7 @@ the laws are checked cold:
     this.cwalk = null;
     this.pov = 0;       // the observer's vantage (a turn keeps the colour order)
     this.flip = false;  // the other side (reverses the colour order)
+    this.paused = false; // E8 animation intent; it runs only while its own spread is open
     this.offscreen = typeof OffscreenCanvas === 'function' ? new OffscreenCanvas(WIDTH, HEIGHT) : null;
     this.drawContext = this.offscreen ? this.offscreen.getContext('2d') : this.canvas.getContext('2d');
     this.visibleContext = this.canvas.getContext('2d');
@@ -273,15 +274,22 @@ the laws are checked cold:
     } catch (e) {
       this.svgEl = null; this.canvas.hidden = false; this.draw();   // offline fallback: the canvas constellation
     }
+    this.syncE8();
     this.updateReadout();
+  }
+
+  // the E8 SMIL animation runs only while its spread is open and not paused — never in the background
+  syncE8() {
+    if (!this.svgEl) return;
+    try { (this.index === 1 && !this.paused) ? this.svgEl.unpauseAnimations() : this.svgEl.pauseAnimations(); } catch (e) {}
   }
 
   goto(i) {
     this.index = Math.max(0, Math.min(SPREADS.length - 1, i));
     this.shadowRoot.querySelectorAll('.spread').forEach((s, k) => s.classList.toggle('on', k === this.index));
     this.shadowRoot.querySelectorAll('.dot').forEach((d, k) => d.classList.toggle('on', k === this.index));
-    if (this.index !== 1 && this.playing) this.togglePlay(this.shadowRoot.querySelector('[data-play]'));
     if (this.index !== 2 && this.cwalk) { clearInterval(this.cwalk); this.cwalk = null; const b = this.shadowRoot.querySelector('[data-cwalk]'); if (b) b.textContent = 'Walk'; }
+    this.syncE8();
   }
 
   // ---- state commons (preserved law + canvas) ----
@@ -324,8 +332,8 @@ the laws are checked cold:
   togglePlay(btn) {
     if (this.svgEl) {
       this.paused = !this.paused;
-      try { this.paused ? this.svgEl.pauseAnimations() : this.svgEl.unpauseAnimations(); } catch (e) {}
-      btn.textContent = this.paused ? 'Resume' : 'Pause';
+      this.syncE8();
+      btn.textContent = this.paused ? 'Play' : 'Pause';
       return;
     }
     if (this.playing) { clearInterval(this.playing); this.playing = null; btn.textContent = 'Resume'; }
