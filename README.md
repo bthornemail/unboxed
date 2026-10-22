@@ -82,14 +82,35 @@ Set `BUSYBOX` to use a specific BusyBox binary:
 BUSYBOX=/path/to/busybox sh scripts/tetra-mask.sh FILE1 FILE2 FILE3 FILE4
 ```
 
-## Browser Projection
+## Browser Projection — the interactive entry
 
-The dependency-free prototype is under `web/`. Serve it with BusyBox so the
-module loads as an HTTP resource:
+`web/` is the project's interactive entry: a dependency-free popup book you
+*operate*, served by one binary. It is an `<agent-commons>` custom element (no
+imports, no CDN, no build) with six turnable spreads, each a working toy over a
+law the BusyBox harness checks elsewhere — the UI shows shape, never
+authentication, and never becomes a second state engine.
+
+1. **Cover** — the invitation.
+2. **The state commons** — the E8 root system on its Coxeter plane, piggybacking
+   the actual proof SVG (`web/e8-step.svg`, copied from `proofs/svg/e8/step.svg`
+   in the sibling project): it is fetched and injected so its own SMIL rotation
+   runs — 240 roots, each positive one paired with its negative reflection,
+   turning 12° per Coxeter step (30 steps = a full turn, 15 = −1). The
+   permutation law `nextState` (`rotl16(1)^rotl16(3)^rotl16(14)^0x1d1d`, the rule
+   the probe checks) steps beside it, with an offline-audio render. A `DOMMatrix`
+   canvas fallback draws the same figure when the page is opened over `file://`.
+3. **The Fano converger** — any 7-bit byte settles on one of 16 constants in ≤2 steps.
+4. **The tetrahedron** — WORD · GOD · OF · of, the six edges, the one literal edge `0x20`.
+5. **The two switches** — a literal read by direction (reverse) and encoding (rot13), each its own inverse.
+6. **Open it** — how to serve and verify, the charter, the open question.
+
+Serve it with BusyBox so the module and the SVG load as HTTP resources (a bare
+`file://` open loses `fetch` and falls back to the canvas figure):
 
 ```sh
 busybox httpd -f -p 8080 -h web
 ```
 
-Open `http://127.0.0.1:8080/`. `tests/check-web.sh` checks the static API
-surface; browser execution still requires a browser with the relevant APIs.
+Open `http://127.0.0.1:8080/`. `tests/check-web.sh` checks the static API surface
+— that the browser primitives stay present and discoverable — and does not claim
+a browser executed them.
