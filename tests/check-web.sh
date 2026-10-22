@@ -8,15 +8,15 @@ set -eu
 
 BUSYBOX=${BUSYBOX:-busybox}
 ROOT=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
-FILE=$ROOT/web/agent-commons.js
+FILE=$ROOT/docs/agent-commons.js
 
 fail() {
     printf 'FAIL: missing browser primitive: %s\n' "$1" >&2
     exit 1
 }
 
-[ -f "$ROOT/web/index.html" ] || fail 'web/index.html'
-[ -f "$FILE" ] || fail 'web/agent-commons.js'
+[ -f "$ROOT/docs/index.html" ] || fail 'docs/index.html'
+[ -f "$FILE" ] || fail 'docs/agent-commons.js'
 
 for token in \
     'OfflineAudioContext' \

@@ -84,15 +84,16 @@ BUSYBOX=/path/to/busybox sh scripts/tetra-mask.sh FILE1 FILE2 FILE3 FILE4
 
 ## Browser Projection — the interactive entry
 
-`web/` is the project's interactive entry: a dependency-free popup book you
-*operate*, served by one binary. It is an `<agent-commons>` custom element (no
-imports, no CDN, no build) with six turnable spreads, each a working toy over a
-law the BusyBox harness checks elsewhere — the UI shows shape, never
-authentication, and never becomes a second state engine.
+`docs/` is the project's interactive entry — and the GitHub Pages source — a
+dependency-free popup book you *operate*, served by one binary (or straight from
+Pages). It is an `<agent-commons>` custom element (no imports, no CDN, no build)
+with seven turnable spreads, each a working toy over a law the BusyBox harness
+checks elsewhere — the UI shows shape, never authentication, and never becomes a
+second state engine.
 
 1. **Cover** — the invitation.
 2. **The state commons** — the E8 root system on its Coxeter plane, piggybacking
-   the actual proof SVG (`web/e8-step.svg`, copied from `proofs/svg/e8/step.svg`
+   the actual proof SVG (`docs/e8-step.svg`, copied from `proofs/svg/e8/step.svg`
    in the sibling project): it is fetched and injected so its own SMIL rotation
    runs — 240 roots, each positive one paired with its negative reflection,
    turning 12° per Coxeter step (30 steps = a full turn, 15 = −1). The
@@ -115,9 +116,14 @@ Serve it with BusyBox so the module and the SVG load as HTTP resources (a bare
 `file://` open loses `fetch` and falls back to the canvas figure):
 
 ```sh
-busybox httpd -f -p 8080 -h web
+busybox httpd -f -p 8080 -h docs
 ```
 
 Open `http://127.0.0.1:8080/`. `tests/check-web.sh` checks the static API surface
 — that the browser primitives stay present and discoverable — and does not claim
 a browser executed them.
+
+GitHub Pages publishes the same `docs/` folder, so the entry is also hosted at the
+repository's Pages URL. A `.nojekyll` marker keeps the module and SVG served raw
+(no Jekyll processing); the app uses only relative paths, so it works at the Pages
+sub-path unchanged.

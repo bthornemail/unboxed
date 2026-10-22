@@ -354,7 +354,7 @@ the full chat transcript as a single already-proven system.
 
 Two structural projections now sit outside that kernel:
 
-- `web/` has a static browser projection whose API surface is checked, while
+- `docs/` has a static browser projection whose API surface is checked, while
   browser execution and timing remain unverified.
 - `tests/http11-status-literals.txt` has a regex-checked status vocabulary,
   while content negotiation and trust semantics remain unverified.

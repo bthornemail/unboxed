@@ -214,7 +214,7 @@ but it is not authentication. UDP does not make a browser-accessible custom
 options channel, and a browser audio or animation clock is not automatically a
 hardware clock.
 
-The dependency-free browser projection under `web/` wires the tested state law
+The dependency-free browser projection under `docs/` wires the tested state law
 into an `OfflineAudioContext`, an `OffscreenCanvas` fallback, metadata `VTTCue`
 records, `DOMMatrix`, and a Shadow DOM custom element. `tests/check-web.sh`
 verifies that those API surfaces are present in the source; it does not replace
