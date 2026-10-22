@@ -134,11 +134,13 @@ export class AgentCommons extends HTMLElement {
 
           <section class="spread" data-s="commons">
             <h2>The Agent Commons</h2>
-            <p>Eight sovereign narrators are the <b>base</b> — each at once a <b>sun</b> (it pulls) and a <b>planet</b> (it orbits). Their shared centre of mass, the <b>f-mean</b> of the eight, is the global base. The 144 colour-name agents are the field that base holds; as the eight sway around their f-mean, the gravity sways the 144. Step the commons and watch the eight move the field.</p>
+            <p>Eight sovereign narrators are the <b>base</b> — each at once a <b>sun</b> (it pulls) and a <b>planet</b> (it orbits), glowing with the <b>f-mean of the hues it holds</b>: the colour of its combination. Their centre of mass, the f-mean of the eight, is the global base; the 144 colour-name agents are the field it holds and sways. The constellation has a <b>point of view</b> — turn the observer and the colour order holds; flip to the other side and it reverses. Same stars, read the other way.</p>
             <canvas data-commons width="${WIDTH}" height="${HEIGHT}"></canvas>
             <div class="row">
               <button data-cstep>Step the commons</button>
               <button class="ghost" data-cwalk>Walk</button>
+              <button class="ghost" data-pov>Observer ⟳</button>
+              <button class="ghost" data-flip>Flip side</button>
             </div>
             <output data-cout></output>
           </section>
@@ -201,6 +203,8 @@ the laws are checked cold:
     this.swBase = 'The Light Garden';
     this.agents = COMMONS_TAGS.map((t) => ({ tag: t, state: speakerSeed(t) }));  // each its own local state
     this.cwalk = null;
+    this.pov = 0;       // the observer's vantage (a turn keeps the colour order)
+    this.flip = false;  // the other side (reverses the colour order)
     this.offscreen = typeof OffscreenCanvas === 'function' ? new OffscreenCanvas(WIDTH, HEIGHT) : null;
     this.drawContext = this.offscreen ? this.offscreen.getContext('2d') : this.canvas.getContext('2d');
     this.visibleContext = this.canvas.getContext('2d');
@@ -243,6 +247,8 @@ the laws are checked cold:
     this.commonsCtx = $('[data-commons]').getContext('2d');
     $('[data-cstep]').addEventListener('click', () => this.stepCommons());
     $('[data-cwalk]').addEventListener('click', (e) => this.walkCommons(e.target));
+    $('[data-pov]').addEventListener('click', () => { this.pov = (this.pov + 1) % 8; this.drawCommons(); });
+    $('[data-flip]').addEventListener('click', () => { this.flip = !this.flip; this.drawCommons(); });
 
     this.loadE8();
     this.drawFano(22);
@@ -391,30 +397,40 @@ the laws are checked cold:
   drawCommons() {
     const ctx = this.commonsCtx, cx = WIDTH / 2, cy = HEIGHT / 2;
     ctx.fillStyle = '#020607'; ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    // the observer's point of view: a turn (pov) keeps the colour order; the other side (flip) reverses it
+    const rot = this.pov * Math.PI / 4, mir = this.flip ? -1 : 1;
+    const view = (x, y) => { const dx = (x - cx) * mir, dy = y - cy; return [cx + dx * Math.cos(rot) - dy * Math.sin(rot), cy + dx * Math.sin(rot) + dy * Math.cos(rot)]; };
     // the 8 base agents — each a sun (it pulls) and a planet (it orbits): position from its local state
     const bodies = this.agents.map((ag, i) => {
       const rad = 46 + i * 15, ang = (ag.state / 65536) * Math.PI * 2 + i * (Math.PI * 2 / 8);
-      return { x: cx + rad * Math.cos(ang), y: cy + rad * Math.sin(ang), hue: (i * 45) % 360 };
+      return { x: cx + rad * Math.cos(ang), y: cy + rad * Math.sin(ang) };
     });
-    // the global base = the f-mean (here the mean position) of the eight: their barycentre
-    const bx = bodies.reduce((s, b) => s + b.x, 0) / 8, by = bodies.reduce((s, b) => s + b.y, 0) / 8;
-    // the 144 colour-name agents: a field the base holds, swayed by the eight's gravity
+    const bx = bodies.reduce((s, b) => s + b.x, 0) / 8, by = bodies.reduce((s, b) => s + b.y, 0) / 8;  // f-mean = barycentre = global base
+    // the 144 colour-name field, swayed by the eight's gravity; each sun accumulates the circular mean (f-mean) of the hues it pulls
     const g = Math.min(WIDTH, HEIGHT) - 28, ox = (WIDTH - g) / 2, oy = (HEIGHT - g) / 2, cs = g / 11;
+    const acc = bodies.map(() => ({ sx: 0, sy: 0 }));
     for (let r = 0; r < 12; r++) for (let c = 0; c < 12; c++) {
-      const px = ox + c * cs, py = oy + r * cs; let dx = 0, dy = 0;
-      for (const b of bodies) { const ex = b.x - px, ey = b.y - py, k = 520 / (ex * ex + ey * ey + 900); dx += ex * k; dy += ey * k; }
-      ctx.fillStyle = `hsl(${Math.round((r * 12 + c) / 144 * 360)} 60% 55%)`;
-      ctx.beginPath(); ctx.arc(px + dx, py + dy, 2.6, 0, Math.PI * 2); ctx.fill();
+      const px = ox + c * cs, py = oy + r * cs, hue = (r * 12 + c) / 144 * 360, hr = hue * Math.PI / 180;
+      let dx = 0, dy = 0;
+      bodies.forEach((b, j) => { const ex = b.x - px, ey = b.y - py, k = 520 / (ex * ex + ey * ey + 900); dx += ex * k; dy += ey * k; acc[j].sx += k * Math.cos(hr); acc[j].sy += k * Math.sin(hr); });
+      const [vx, vy] = view(px + dx, py + dy);
+      ctx.fillStyle = `hsl(${Math.round(hue)} 60% 55%)`;
+      ctx.beginPath(); ctx.arc(vx, vy, 2.6, 0, Math.PI * 2); ctx.fill();
     }
-    // the eight suns-and-planets (glow + core), and the barycentre (the f-mean / global base)
-    for (const b of bodies) {
-      ctx.fillStyle = `hsla(${b.hue}, 90%, 65%, 0.22)`; ctx.beginPath(); ctx.arc(b.x, b.y, 13, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = `hsl(${b.hue} 90% 68%)`; ctx.beginPath(); ctx.arc(b.x, b.y, 5, 0, Math.PI * 2); ctx.fill();
-    }
-    ctx.strokeStyle = '#72ffe0'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(bx, by, 7, 0, Math.PI * 2); ctx.stroke();
+    const sunHue = (j) => ((Math.atan2(acc[j].sy, acc[j].sx) * 180 / Math.PI) + 360) % 360;
+    bodies.forEach((b, j) => {
+      const [vx, vy] = view(b.x, b.y), h = Math.round(sunHue(j));
+      ctx.fillStyle = `hsla(${h}, 90%, 60%, 0.22)`; ctx.beginPath(); ctx.arc(vx, vy, 13, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = `hsl(${h} 90% 64%)`; ctx.beginPath(); ctx.arc(vx, vy, 5, 0, Math.PI * 2); ctx.fill();
+    });
+    const [vbx, vby] = view(bx, by);
+    ctx.strokeStyle = '#72ffe0'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(vbx, vby, 7, 0, Math.PI * 2); ctx.stroke();
+    // the colour order read clockwise from this vantage
+    const order = bodies.map((b, j) => { const [vx, vy] = view(b.x, b.y); return { a: Math.atan2(vy - vby, vx - vbx), h: Math.round(sunHue(j)) }; })
+      .sort((p, q) => p.a - q.a).map((o) => o.h);
     ctx.fillStyle = '#9bcfc4'; ctx.font = '11px ui-monospace, monospace';
-    ctx.fillText('○ = f-mean of the 8 (the global base) · 144 field swayed by the eight', 14, HEIGHT - 12);
-    this.shadowRoot.querySelector('[data-cout]').textContent = this.agents.map((ag) => `${ag.tag.slice(0, 3)} ${hex(ag.state, 4)}`).join('   ');
+    ctx.fillText(`observer ${this.pov}${this.flip ? ' · flipped' : ''}  ·  ○ = f-mean (global base)`, 14, HEIGHT - 12);
+    this.shadowRoot.querySelector('[data-cout]').textContent = `colour order from here: ${order.map((h) => h + '°').join(' ')}`;
   }
   stepCommons() { for (const ag of this.agents) ag.state = nextState(ag.state); this.drawCommons(); }
   walkCommons(btn) {

@@ -103,7 +103,9 @@ authentication, and never becomes a second state engine.
    a **sun** (it pulls) and a **planet** (it orbits), each with its own local state.
    Their centre of mass — the **f-mean** of the eight — is the global base; the 144
    colour-name agents are the field it holds. Step the commons and the eight sway
-   around their f-mean, and the gravity sways the 144.
+   around their f-mean, and the gravity sways the 144. Each sun glows with the
+   f-mean of the hues it holds (the colour of its combination); an observer control
+   turns the vantage — a turn keeps the colour order, the other side reverses it.
 4. **The Fano converger** — any 7-bit byte settles on one of 16 constants in ≤2 steps.
 5. **The tetrahedron** — WORD · GOD · OF · of, the six edges, the one literal edge `0x20`.
 6. **The two switches** — a literal read by direction (reverse) and encoding (rot13), each its own inverse.
