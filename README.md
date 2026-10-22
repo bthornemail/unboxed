@@ -99,10 +99,14 @@ authentication, and never becomes a second state engine.
    permutation law `nextState` (`rotl16(1)^rotl16(3)^rotl16(14)^0x1d1d`, the rule
    the probe checks) steps beside it, with an offline-audio render. A `DOMMatrix`
    canvas fallback draws the same figure when the page is opened over `file://`.
-3. **The Fano converger** — any 7-bit byte settles on one of 16 constants in ≤2 steps.
-4. **The tetrahedron** — WORD · GOD · OF · of, the six edges, the one literal edge `0x20`.
-5. **The two switches** — a literal read by direction (reverse) and encoding (rot13), each its own inverse.
-6. **Open it** — how to serve and verify, the charter, the open question.
+3. **The Agent Commons** — eight sovereign agents share one plane, but each carries
+   its **own local state** (seeded from its tag, stepped on its own). Step the
+   commons and the eight states diverge: together in the space, apart in state —
+   not one global clock.
+4. **The Fano converger** — any 7-bit byte settles on one of 16 constants in ≤2 steps.
+5. **The tetrahedron** — WORD · GOD · OF · of, the six edges, the one literal edge `0x20`.
+6. **The two switches** — a literal read by direction (reverse) and encoding (rot13), each its own inverse.
+7. **Open it** — how to serve and verify, the charter, the open question.
 
 Serve it with BusyBox so the module and the SVG load as HTTP resources (a bare
 `file://` open loses `fetch` and falls back to the canvas figure):

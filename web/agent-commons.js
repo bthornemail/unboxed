@@ -55,7 +55,11 @@ const hex = (n, w = 2) => '0x' + (n >>> 0).toString(16).padStart(w, '0');
 const popcount = (n) => { let c = 0; while (n) { c += n & 1; n >>= 1; } return c; };
 const rot13 = (s) => s.replace(/[a-z]/gi, (c) => String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26));
 
-const SPREADS = ['cover', 'state', 'fano', 'tetra', 'switch', 'join'];
+// each agent's seed is its own literal, never a hash: the first two bytes of its tag
+const speakerSeed = (name) => (((name.charCodeAt(0) & 0xff) << 8) | (name.charCodeAt(1) & 0xff || 0)) & 0xffff;
+const COMMONS_TAGS = ['METATRON', 'SOLOMON', 'SOLON', 'ASABIYAH', 'ENOCH', 'SPEAKER', 'GENESIS', 'OBSERVER'];
+
+const SPREADS = ['cover', 'state', 'commons', 'fano', 'tetra', 'switch', 'join'];
 
 export class AgentCommons extends HTMLElement {
   constructor() {
@@ -128,6 +132,17 @@ export class AgentCommons extends HTMLElement {
             <video muted playsinline hidden></video>
           </section>
 
+          <section class="spread" data-s="commons">
+            <h2>The Agent Commons</h2>
+            <p>Eight sovereign agents share one plane — but each carries its <b>own local state</b>, seeded from its tag and stepped on its own. They are not one global clock. Step the commons and each walks its own path: together in the space, apart in state. The readout shows the eight states diverging.</p>
+            <canvas data-commons width="${WIDTH}" height="${HEIGHT}"></canvas>
+            <div class="row">
+              <button data-cstep>Step the commons</button>
+              <button class="ghost" data-cwalk>Walk</button>
+            </div>
+            <output data-cout></output>
+          </section>
+
           <section class="spread" data-s="fano">
             <h2>The Fano converger</h2>
             <p>Pick any 7-bit byte. The law marks <code>a&nbsp;XOR&nbsp;b</code> for every lit pair, and in <b>at most two steps</b> it settles on one of 16 constants: the empty set, 7 points, 7 lines, the full set. Checked over all 128; watch one.</p>
@@ -184,6 +199,8 @@ the laws are checked cold:
     this.playing = null;
     this.sw = { rev: false, enc: false };
     this.swBase = 'The Light Garden';
+    this.agents = COMMONS_TAGS.map((t) => ({ tag: t, state: speakerSeed(t) }));  // each its own local state
+    this.cwalk = null;
     this.offscreen = typeof OffscreenCanvas === 'function' ? new OffscreenCanvas(WIDTH, HEIGHT) : null;
     this.drawContext = this.offscreen ? this.offscreen.getContext('2d') : this.canvas.getContext('2d');
     this.visibleContext = this.canvas.getContext('2d');
@@ -222,9 +239,15 @@ the laws are checked cold:
     $('[data-rev]').addEventListener('click', () => { this.sw.rev = !this.sw.rev; this.drawSwitch(); });
     $('[data-enc]').addEventListener('click', () => { this.sw.enc = !this.sw.enc; this.drawSwitch(); });
 
+    // the commons: each agent its own local state on a shared plane
+    this.commonsCtx = $('[data-commons]').getContext('2d');
+    $('[data-cstep]').addEventListener('click', () => this.stepCommons());
+    $('[data-cwalk]').addEventListener('click', (e) => this.walkCommons(e.target));
+
     this.loadE8();
     this.drawFano(22);
     this.drawSwitch();
+    this.drawCommons();
     this.goto(0);
   }
 
@@ -252,6 +275,7 @@ the laws are checked cold:
     this.shadowRoot.querySelectorAll('.spread').forEach((s, k) => s.classList.toggle('on', k === this.index));
     this.shadowRoot.querySelectorAll('.dot').forEach((d, k) => d.classList.toggle('on', k === this.index));
     if (this.index !== 1 && this.playing) this.togglePlay(this.shadowRoot.querySelector('[data-play]'));
+    if (this.index !== 2 && this.cwalk) { clearInterval(this.cwalk); this.cwalk = null; const b = this.shadowRoot.querySelector('[data-cwalk]'); if (b) b.textContent = 'Walk'; }
   }
 
   // ---- state commons (preserved law + canvas) ----
@@ -361,6 +385,33 @@ the laws are checked cold:
     this.shadowRoot.querySelector('[data-pl]').textContent = s;
     this.shadowRoot.querySelector('[data-sw]').textContent =
       `direction: ${this.sw.rev ? 'reversed' : 'forward'} · encoding: ${this.sw.enc ? 'rot13' : 'plain'} — the literal underneath is unchanged`;
+  }
+
+  // ---- the Agent Commons: sovereign agents, each its own local state, one shared plane ----
+  drawCommons() {
+    const ctx = this.commonsCtx, cx = WIDTH / 2, cy = HEIGHT / 2, maxR = Math.min(WIDTH, HEIGHT) / 2 - 22;
+    ctx.fillStyle = '#020607'; ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    ctx.strokeStyle = 'rgba(114,255,224,0.10)'; ctx.lineWidth = 1;            // the shared plane: 8 sectors
+    for (let s = 0; s < 8; s++) { const a = s * Math.PI / 4; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + maxR * Math.cos(a), cy + maxR * Math.sin(a)); ctx.stroke(); }
+    ctx.beginPath(); ctx.arc(cx, cy, maxR, 0, Math.PI * 2); ctx.stroke();
+    const lines = [];
+    this.agents.forEach((ag, i) => {
+      const sector = ag.state >> 13;                                          // 0..7, its place on the shared plane
+      const ang = sector * Math.PI / 4 + ((ag.state & 0x1fff) / 0x2000) * (Math.PI / 4);
+      const rad = 40 + ((ag.state & 0xff) / 255) * (maxR - 48);
+      const x = cx + rad * Math.cos(ang), y = cy + rad * Math.sin(ang);
+      ctx.fillStyle = `hsl(${(i * 45) % 360} 80% 62%)`;
+      ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#d7fff5'; ctx.font = '11px ui-monospace, monospace';
+      ctx.fillText(ag.tag, x + 8, y + 4);
+      lines.push(`${ag.tag.padEnd(9)} ${hex(ag.state, 4)}  sector ${sector}`);
+    });
+    this.shadowRoot.querySelector('[data-cout]').textContent = lines.join('\n');
+  }
+  stepCommons() { for (const ag of this.agents) ag.state = nextState(ag.state); this.drawCommons(); }
+  walkCommons(btn) {
+    if (this.cwalk) { clearInterval(this.cwalk); this.cwalk = null; btn.textContent = 'Walk'; }
+    else { this.cwalk = setInterval(() => this.stepCommons(), 140); btn.textContent = 'Stop'; }
   }
 }
 
