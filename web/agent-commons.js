@@ -134,7 +134,7 @@ export class AgentCommons extends HTMLElement {
 
           <section class="spread" data-s="commons">
             <h2>The Agent Commons</h2>
-            <p>Eight sovereign agents share one plane — but each carries its <b>own local state</b>, seeded from its tag and stepped on its own. They are not one global clock. Step the commons and each walks its own path: together in the space, apart in state. The readout shows the eight states diverging.</p>
+            <p>Eight sovereign narrators are the <b>base</b> — each at once a <b>sun</b> (it pulls) and a <b>planet</b> (it orbits). Their shared centre of mass, the <b>f-mean</b> of the eight, is the global base. The 144 colour-name agents are the field that base holds; as the eight sway around their f-mean, the gravity sways the 144. Step the commons and watch the eight move the field.</p>
             <canvas data-commons width="${WIDTH}" height="${HEIGHT}"></canvas>
             <div class="row">
               <button data-cstep>Step the commons</button>
@@ -389,24 +389,32 @@ the laws are checked cold:
 
   // ---- the Agent Commons: sovereign agents, each its own local state, one shared plane ----
   drawCommons() {
-    const ctx = this.commonsCtx, cx = WIDTH / 2, cy = HEIGHT / 2, maxR = Math.min(WIDTH, HEIGHT) / 2 - 22;
+    const ctx = this.commonsCtx, cx = WIDTH / 2, cy = HEIGHT / 2;
     ctx.fillStyle = '#020607'; ctx.fillRect(0, 0, WIDTH, HEIGHT);
-    ctx.strokeStyle = 'rgba(114,255,224,0.10)'; ctx.lineWidth = 1;            // the shared plane: 8 sectors
-    for (let s = 0; s < 8; s++) { const a = s * Math.PI / 4; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + maxR * Math.cos(a), cy + maxR * Math.sin(a)); ctx.stroke(); }
-    ctx.beginPath(); ctx.arc(cx, cy, maxR, 0, Math.PI * 2); ctx.stroke();
-    const lines = [];
-    this.agents.forEach((ag, i) => {
-      const sector = ag.state >> 13;                                          // 0..7, its place on the shared plane
-      const ang = sector * Math.PI / 4 + ((ag.state & 0x1fff) / 0x2000) * (Math.PI / 4);
-      const rad = 40 + ((ag.state & 0xff) / 255) * (maxR - 48);
-      const x = cx + rad * Math.cos(ang), y = cy + rad * Math.sin(ang);
-      ctx.fillStyle = `hsl(${(i * 45) % 360} 80% 62%)`;
-      ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#d7fff5'; ctx.font = '11px ui-monospace, monospace';
-      ctx.fillText(ag.tag, x + 8, y + 4);
-      lines.push(`${ag.tag.padEnd(9)} ${hex(ag.state, 4)}  sector ${sector}`);
+    // the 8 base agents — each a sun (it pulls) and a planet (it orbits): position from its local state
+    const bodies = this.agents.map((ag, i) => {
+      const rad = 46 + i * 15, ang = (ag.state / 65536) * Math.PI * 2 + i * (Math.PI * 2 / 8);
+      return { x: cx + rad * Math.cos(ang), y: cy + rad * Math.sin(ang), hue: (i * 45) % 360 };
     });
-    this.shadowRoot.querySelector('[data-cout]').textContent = lines.join('\n');
+    // the global base = the f-mean (here the mean position) of the eight: their barycentre
+    const bx = bodies.reduce((s, b) => s + b.x, 0) / 8, by = bodies.reduce((s, b) => s + b.y, 0) / 8;
+    // the 144 colour-name agents: a field the base holds, swayed by the eight's gravity
+    const g = Math.min(WIDTH, HEIGHT) - 28, ox = (WIDTH - g) / 2, oy = (HEIGHT - g) / 2, cs = g / 11;
+    for (let r = 0; r < 12; r++) for (let c = 0; c < 12; c++) {
+      const px = ox + c * cs, py = oy + r * cs; let dx = 0, dy = 0;
+      for (const b of bodies) { const ex = b.x - px, ey = b.y - py, k = 520 / (ex * ex + ey * ey + 900); dx += ex * k; dy += ey * k; }
+      ctx.fillStyle = `hsl(${Math.round((r * 12 + c) / 144 * 360)} 60% 55%)`;
+      ctx.beginPath(); ctx.arc(px + dx, py + dy, 2.6, 0, Math.PI * 2); ctx.fill();
+    }
+    // the eight suns-and-planets (glow + core), and the barycentre (the f-mean / global base)
+    for (const b of bodies) {
+      ctx.fillStyle = `hsla(${b.hue}, 90%, 65%, 0.22)`; ctx.beginPath(); ctx.arc(b.x, b.y, 13, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = `hsl(${b.hue} 90% 68%)`; ctx.beginPath(); ctx.arc(b.x, b.y, 5, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.strokeStyle = '#72ffe0'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(bx, by, 7, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = '#9bcfc4'; ctx.font = '11px ui-monospace, monospace';
+    ctx.fillText('○ = f-mean of the 8 (the global base) · 144 field swayed by the eight', 14, HEIGHT - 12);
+    this.shadowRoot.querySelector('[data-cout]').textContent = this.agents.map((ag) => `${ag.tag.slice(0, 3)} ${hex(ag.state, 4)}`).join('   ');
   }
   stepCommons() { for (const ag of this.agents) ag.state = nextState(ag.state); this.drawCommons(); }
   walkCommons(btn) {

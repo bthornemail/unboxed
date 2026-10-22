@@ -99,10 +99,11 @@ authentication, and never becomes a second state engine.
    permutation law `nextState` (`rotl16(1)^rotl16(3)^rotl16(14)^0x1d1d`, the rule
    the probe checks) steps beside it, with an offline-audio render. A `DOMMatrix`
    canvas fallback draws the same figure when the page is opened over `file://`.
-3. **The Agent Commons** — eight sovereign agents share one plane, but each carries
-   its **own local state** (seeded from its tag, stepped on its own). Step the
-   commons and the eight states diverge: together in the space, apart in state —
-   not one global clock.
+3. **The Agent Commons** — eight sovereign narrators are the **base**, each at once
+   a **sun** (it pulls) and a **planet** (it orbits), each with its own local state.
+   Their centre of mass — the **f-mean** of the eight — is the global base; the 144
+   colour-name agents are the field it holds. Step the commons and the eight sway
+   around their f-mean, and the gravity sways the 144.
 4. **The Fano converger** — any 7-bit byte settles on one of 16 constants in ≤2 steps.
 5. **The tetrahedron** — WORD · GOD · OF · of, the six edges, the one literal edge `0x20`.
 6. **The two switches** — a literal read by direction (reverse) and encoding (rot13), each its own inverse.
