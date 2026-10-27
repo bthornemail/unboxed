@@ -1,0 +1,816 @@
+     1	bin/[$
+     2	bin/[[$
+     3	sbin/acpid$
+     4	sbin/adjtimex$
+     5	usr/bin/ar$
+     6	bin/arch$
+     7	sbin/arp$
+     8	usr/sbin/arping$
+     9	usr/bin/ascii$
+    10	bin/ash$
+    11	usr/bin/awk$
+    12	bin/base64$
+    13	usr/bin/basename$
+    14	usr/bin/bc$
+    15	usr/bin/blkdiscard$
+    16	sbin/blockdev$
+    17	usr/sbin/brctl$
+    18	usr/bin/bunzip2$
+    19	bin/busybox$
+    20	usr/bin/bzcat$
+    21	usr/bin/bzip2$
+    22	usr/bin/cal$
+    23	bin/cat$
+    24	bin/chgrp$
+    25	bin/chmod$
+    26	bin/chown$
+    27	usr/sbin/chpasswd$
+    28	usr/sbin/chroot$
+    29	usr/bin/chvt$
+    30	usr/bin/clear$
+    31	usr/bin/cmp$
+    32	bin/cp$
+    33	bin/cpio$
+    34	usr/bin/crc32$
+    35	usr/sbin/crond$
+    36	usr/bin/crontab$
+    37	bin/cttyhack$
+    38	usr/bin/cut$
+    39	bin/date$
+    40	usr/bin/dc$
+    41	bin/dd$
+    42	usr/bin/deallocvt$
+    43	sbin/depmod$
+    44	sbin/devmem$
+    45	bin/df$
+    46	usr/bin/diff$
+    47	usr/bin/dirname$
+    48	bin/dmesg$
+    49	bin/dnsdomainname$
+    50	usr/bin/dos2unix$
+    51	usr/bin/dpkg$
+    52	usr/bin/dpkg-deb$
+    53	usr/bin/du$
+    54	bin/dumpkmap$
+    55	usr/bin/dumpleases$
+    56	bin/echo$
+    57	bin/ed$
+    58	bin/egrep$
+    59	usr/bin/env$
+    60	usr/bin/expand$
+    61	usr/bin/expr$
+    62	usr/bin/factor$
+    63	usr/bin/fallocate$
+    64	bin/false$
+    65	bin/fatattr$
+    66	sbin/fdisk$
+    67	bin/fgrep$
+    68	usr/bin/find$
+    69	sbin/findfs$
+    70	usr/bin/fold$
+    71	usr/bin/free$
+    72	sbin/freeramdisk$
+    73	usr/sbin/fsfreeze$
+    74	sbin/fstrim$
+    75	usr/bin/ftpget$
+    76	usr/bin/ftpput$
+    77	bin/getopt$
+    78	sbin/getty$
+    79	bin/grep$
+    80	usr/bin/groups$
+    81	bin/gunzip$
+    82	bin/gzip$
+    83	sbin/halt$
+    84	usr/bin/head$
+    85	usr/bin/hexdump$
+    86	usr/bin/hostid$
+    87	bin/hostname$
+    88	usr/sbin/httpd$
+    89	sbin/hwclock$
+    90	usr/sbin/i2cdetect$
+    91	usr/sbin/i2cdump$
+    92	usr/sbin/i2cget$
+    93	usr/sbin/i2cset$
+    94	usr/sbin/i2ctransfer$
+    95	usr/bin/id$
+    96	sbin/ifconfig$
+    97	sbin/ifdown$
+    98	sbin/ifup$
+    99	sbin/init$
+   100	sbin/insmod$
+   101	bin/ionice$
+   102	sbin/ip$
+   103	bin/ipcalc$
+   104	bin/kill$
+   105	usr/bin/killall$
+   106	sbin/klogd$
+   107	usr/bin/last$
+   108	usr/bin/less$
+   109	bin/link$
+   110	bin/linux32$
+   111	bin/linux64$
+   112	linuxrc$
+   113	bin/ln$
+   114	usr/sbin/loadfont$
+   115	sbin/loadkmap$
+   116	usr/bin/logger$
+   117	bin/login$
+   118	usr/bin/logname$
+   119	sbin/logread$
+   120	sbin/losetup$
+   121	bin/ls$
+   122	sbin/lsmod$
+   123	usr/bin/lsscsi$
+   124	usr/bin/lzcat$
+   125	usr/bin/lzma$
+   126	bin/lzop$
+   127	usr/bin/md5sum$
+   128	sbin/mdev$
+   129	usr/bin/microcom$
+   130	usr/sbin/mim$
+   131	bin/mkdir$
+   132	sbin/mkdosfs$
+   133	sbin/mke2fs$
+   134	usr/bin/mkfifo$
+   135	bin/mknod$
+   136	usr/bin/mkpasswd$
+   137	sbin/mkswap$
+   138	bin/mktemp$
+   139	sbin/modinfo$
+   140	sbin/modprobe$
+   141	bin/more$
+   142	bin/mount$
+   143	bin/mt$
+   144	bin/mv$
+   145	sbin/nameif$
+   146	usr/sbin/nbd-client$
+   147	usr/bin/nc$
+   148	bin/netstat$
+   149	usr/bin/nl$
+   150	usr/sbin/nologin$
+   151	usr/bin/nproc$
+   152	usr/bin/nsenter$
+   153	usr/bin/nslookup$
+   154	bin/nuke$
+   155	usr/bin/od$
+   156	usr/bin/openvt$
+   157	usr/sbin/partprobe$
+   158	usr/bin/passwd$
+   159	usr/bin/paste$
+   160	usr/bin/patch$
+   161	bin/pidof$
+   162	bin/ping$
+   163	bin/ping6$
+   164	sbin/pivot_root$
+   165	sbin/poweroff$
+   166	usr/bin/printf$
+   167	bin/ps$
+   168	bin/pwd$
+   169	usr/sbin/rdate$
+   170	bin/readlink$
+   171	usr/bin/realpath$
+   172	sbin/reboot$
+   173	usr/bin/renice$
+   174	usr/bin/reset$
+   175	bin/resume$
+   176	bin/rev$
+   177	bin/rm$
+   178	bin/rmdir$
+   179	sbin/rmmod$
+   180	sbin/route$
+   181	bin/rpm$
+   182	usr/bin/rpm2cpio$
+   183	sbin/run-init$
+   184	bin/run-parts$
+   185	bin/sed$
+   186	usr/bin/seq$
+   187	usr/bin/setkeycodes$
+   188	bin/setpriv$
+   189	usr/bin/setsid$
+   190	bin/sh$
+   191	usr/bin/sha1sum$
+   192	usr/bin/sha256sum$
+   193	usr/bin/sha3sum$
+   194	usr/bin/sha512sum$
+   195	usr/bin/shred$
+   196	usr/bin/shuf$
+   197	bin/sleep$
+   198	usr/bin/sort$
+   199	usr/bin/ssl_client$
+   200	sbin/start-stop-daemon$
+   201	bin/stat$
+   202	bin/static-sh$
+   203	usr/bin/strings$
+   204	bin/stty$
+   205	bin/su$
+   206	sbin/sulogin$
+   207	usr/bin/svc$
+   208	usr/bin/svok$
+   209	sbin/swapoff$
+   210	sbin/swapon$
+   211	sbin/switch_root$
+   212	bin/sync$
+   213	sbin/sysctl$
+   214	sbin/syslogd$
+   215	usr/bin/tac$
+   216	usr/bin/tail$
+   217	bin/tar$
+   218	usr/bin/taskset$
+   219	sbin/tc$
+   220	usr/bin/tee$
+   221	usr/bin/telnet$
+   222	usr/sbin/telnetd$
+   223	bin/test$
+   224	usr/bin/tftp$
+   225	usr/bin/time$
+   226	usr/bin/timeout$
+   227	usr/bin/top$
+   228	bin/touch$
+   229	usr/bin/tr$
+   230	usr/bin/traceroute$
+   231	usr/bin/traceroute6$
+   232	bin/true$
+   233	usr/bin/truncate$
+   234	usr/bin/ts$
+   235	usr/bin/tty$
+   236	sbin/tunctl$
+   237	usr/sbin/ubirename$
+   238	sbin/udhcpc$
+   239	usr/bin/udhcpc6$
+   240	usr/sbin/udhcpd$
+   241	sbin/uevent$
+   242	bin/umount$
+   243	bin/uname$
+   244	bin/uncompress$
+   245	usr/bin/unexpand$
+   246	usr/bin/uniq$
+   247	usr/bin/unix2dos$
+   248	usr/bin/unlink$
+   249	usr/bin/unlzma$
+   250	usr/bin/unshare$
+   251	usr/bin/unxz$
+   252	usr/bin/unzip$
+   253	usr/bin/uptime$
+   254	bin/usleep$
+   255	usr/bin/uudecode$
+   256	usr/bin/uuencode$
+   257	sbin/vconfig$
+   258	bin/vi$
+   259	usr/bin/w$
+   260	bin/watch$
+   261	sbin/watchdog$
+   262	usr/bin/wc$
+   263	usr/bin/wget$
+   264	usr/bin/which$
+   265	usr/bin/who$
+   266	usr/bin/whoami$
+   267	usr/bin/xargs$
+   268	usr/bin/xxd$
+   269	usr/bin/xz$
+   270	usr/bin/xzcat$
+   271	usr/bin/yes$
+   272	bin/zcat$
+   273	[^I|      ^I^I^I^I^I^I^I[/nib$
+   274	[[^I|      ^I^I^I^I^I^I^I[[/nib$
+   275	dipca^I|      ^I^I^I^I^I^Idipca/nibs$
+   276	xemitjda^I|      ^I^I^I^I^I^Ixemitjda/nibs$
+   277	ra^I|      ^I^I^I^I^I^Ira/nib/rsu$
+   278	hcra^I|      ^I^I^I^I^I^Ihcra/nib$
+   279	pra^I|      ^I^I^I^I^I^Ipra/nibs$
+   280	gnipra^I|      ^I^I^I^I^I^Ignipra/nibs/rsu$
+   281	iicsa^I|      ^I^I^I^I^I^Iiicsa/nib/rsu$
+   282	hsa^I|      ^I^I^I^I^I^I^Ihsa/nib$
+   283	kwa^I|      ^I^I^I^I^I^Ikwa/nib/rsu$
+   284	46esab^I|      ^I^I^I^I^I^I46esab/nib$
+   285	emanesab^I|      ^I^I^I^I^Iemanesab/nib/rsu$
+   286	cb^I|      ^I^I^I^I^I^Icb/nib/rsu$
+   287	dracsidklb^I|      ^I^I^I^I^Idracsidklb/nib/rsu$
+   288	vedkcolb^I|      ^I^I^I^I^I^Ivedkcolb/nibs$
+   289	ltcrb^I|      ^I^I^I^I^I^Iltcrb/nibs/rsu$
+   290	2piznub^I|      ^I^I^I^I^I^I2piznub/nib/rsu$
+   291	xobysub^I|      ^I^I^I^I^I^Ixobysub/nib$
+   292	taczb^I|      ^I^I^I^I^I^Itaczb/nib/rsu$
+   293	2pizb^I|      ^I^I^I^I^I^I2pizb/nib/rsu$
+   294	lac^I|      ^I^I^I^I^I^Ilac/nib/rsu$
+   295	tac^I|      ^I^I^I^I^I^I^Itac/nib$
+   296	prghc^I|      ^I^I^I^I^I^Iprghc/nib$
+   297	domhc^I|      ^I^I^I^I^I^Idomhc/nib$
+   298	nwohc^I|      ^I^I^I^I^I^Inwohc/nib$
+   299	dwssaphc^I|      ^I^I^I^I^Idwssaphc/nibs/rsu$
+   300	toorhc^I|      ^I^I^I^I^I^Itoorhc/nibs/rsu$
+   301	tvhc^I|      ^I^I^I^I^I^Itvhc/nib/rsu$
+   302	raelc^I|      ^I^I^I^I^I^Iraelc/nib/rsu$
+   303	pmc^I|      ^I^I^I^I^I^Ipmc/nib/rsu$
+   304	pc^I|      ^I^I^I^I^I^I^Ipc/nib$
+   305	oipc^I|      ^I^I^I^I^I^Ioipc/nib$
+   306	23crc^I|      ^I^I^I^I^I^I23crc/nib/rsu$
+   307	dnorc^I|      ^I^I^I^I^I^Idnorc/nibs/rsu$
+   308	batnorc^I|      ^I^I^I^I^I^Ibatnorc/nib/rsu$
+   309	kcahyttc^I|      ^I^I^I^I^I^Ikcahyttc/nib$
+   310	tuc^I|      ^I^I^I^I^I^Ituc/nib/rsu$
+   311	etad^I|      ^I^I^I^I^I^Ietad/nib$
+   312	cd^I|      ^I^I^I^I^I^Icd/nib/rsu$
+   313	dd^I|      ^I^I^I^I^I^I^Idd/nib$
+   314	tvcollaed^I|      ^I^I^I^I^Itvcollaed/nib/rsu$
+   315	domped^I|      ^I^I^I^I^I^Idomped/nibs$
+   316	memved^I|      ^I^I^I^I^I^Imemved/nibs$
+   317	fd^I|      ^I^I^I^I^I^I^Ifd/nib$
+   318	ffid^I|      ^I^I^I^I^I^Iffid/nib/rsu$
+   319	emanrid^I|      ^I^I^I^I^I^Iemanrid/nib/rsu$
+   320	gsemd^I|      ^I^I^I^I^I^Igsemd/nib$
+   321	emanniamodsnd^I|      ^I^I^I^I^Iemanniamodsnd/nib$
+   322	xinu2sod^I|      ^I^I^I^I^Ixinu2sod/nib/rsu$
+   323	gkpd^I|      ^I^I^I^I^I^Igkpd/nib/rsu$
+   324	bed-gkpd^I|      ^I^I^I^I^Ibed-gkpd/nib/rsu$
+   325	ud^I|      ^I^I^I^I^I^Iud/nib/rsu$
+   326	pamkpmud^I|      ^I^I^I^I^I^Ipamkpmud/nib$
+   327	sesaelpmud^I|      ^I^I^I^I^Isesaelpmud/nib/rsu$
+   328	ohce^I|      ^I^I^I^I^I^Iohce/nib$
+   329	de^I|      ^I^I^I^I^I^I^Ide/nib$
+   330	perge^I|      ^I^I^I^I^I^Iperge/nib$
+   331	vne^I|      ^I^I^I^I^I^Ivne/nib/rsu$
+   332	dnapxe^I|      ^I^I^I^I^I^Idnapxe/nib/rsu$
+   333	rpxe^I|      ^I^I^I^I^I^Irpxe/nib/rsu$
+   334	rotcaf^I|      ^I^I^I^I^I^Irotcaf/nib/rsu$
+   335	etacollaf^I|      ^I^I^I^I^Ietacollaf/nib/rsu$
+   336	eslaf^I|      ^I^I^I^I^I^Ieslaf/nib$
+   337	rttataf^I|      ^I^I^I^I^I^Irttataf/nib$
+   338	ksidf^I|      ^I^I^I^I^I^Iksidf/nibs$
+   339	pergf^I|      ^I^I^I^I^I^Ipergf/nib$
+   340	dnif^I|      ^I^I^I^I^I^Idnif/nib/rsu$
+   341	sfdnif^I|      ^I^I^I^I^I^Isfdnif/nibs$
+   342	dlof^I|      ^I^I^I^I^I^Idlof/nib/rsu$
+   343	eerf^I|      ^I^I^I^I^I^Ieerf/nib/rsu$
+   344	ksidmareerf^I|      ^I^I^I^I^Iksidmareerf/nibs$
+   345	ezeerfsf^I|      ^I^I^I^I^Iezeerfsf/nibs/rsu$
+   346	mirtsf^I|      ^I^I^I^I^I^Imirtsf/nibs$
+   347	tegptf^I|      ^I^I^I^I^I^Itegptf/nib/rsu$
+   348	tupptf^I|      ^I^I^I^I^I^Itupptf/nib/rsu$
+   349	tpoteg^I|      ^I^I^I^I^I^Itpoteg/nib$
+   350	ytteg^I|      ^I^I^I^I^I^Iytteg/nibs$
+   351	perg^I|      ^I^I^I^I^I^Iperg/nib$
+   352	spuorg^I|      ^I^I^I^I^I^Ispuorg/nib/rsu$
+   353	piznug^I|      ^I^I^I^I^I^Ipiznug/nib$
+   354	pizg^I|      ^I^I^I^I^I^Ipizg/nib$
+   355	tlah^I|      ^I^I^I^I^I^Itlah/nibs$
+   356	daeh^I|      ^I^I^I^I^I^Idaeh/nib/rsu$
+   357	pmudxeh^I|      ^I^I^I^I^I^Ipmudxeh/nib/rsu$
+   358	ditsoh^I|      ^I^I^I^I^I^Iditsoh/nib/rsu$
+   359	emantsoh^I|      ^I^I^I^I^I^Iemantsoh/nib$
+   360	dptth^I|      ^I^I^I^I^I^Idptth/nibs/rsu$
+   361	kcolcwh^I|      ^I^I^I^I^I^Ikcolcwh/nibs$
+   362	tcetedc2i^I|      ^I^I^I^I^Itcetedc2i/nibs/rsu$
+   363	pmudc2i^I|      ^I^I^I^I^Ipmudc2i/nibs/rsu$
+   364	tegc2i^I|      ^I^I^I^I^I^Itegc2i/nibs/rsu$
+   365	tesc2i^I|      ^I^I^I^I^I^Itesc2i/nibs/rsu$
+   366	refsnartc2i^I|      ^I^I^I^I^Irefsnartc2i/nibs/rsu$
+   367	di^I|      ^I^I^I^I^I^Idi/nib/rsu$
+   368	gifnocfi^I|      ^I^I^I^I^I^Igifnocfi/nibs$
+   369	nwodfi^I|      ^I^I^I^I^I^Inwodfi/nibs$
+   370	pufi^I|      ^I^I^I^I^I^Ipufi/nibs$
+   371	tini^I|      ^I^I^I^I^I^Itini/nibs$
+   372	domsni^I|      ^I^I^I^I^I^Idomsni/nibs$
+   373	ecinoi^I|      ^I^I^I^I^I^Iecinoi/nib$
+   374	pi^I|      ^I^I^I^I^I^I^Ipi/nibs$
+   375	clacpi^I|      ^I^I^I^I^I^Iclacpi/nib$
+   376	llik^I|      ^I^I^I^I^I^Illik/nib$
+   377	llallik^I|      ^I^I^I^I^I^Illallik/nib/rsu$
+   378	dgolk^I|      ^I^I^I^I^I^Idgolk/nibs$
+   379	tsal^I|      ^I^I^I^I^I^Itsal/nib/rsu$
+   380	ssel^I|      ^I^I^I^I^I^Issel/nib/rsu$
+   381	knil^I|      ^I^I^I^I^I^Iknil/nib$
+   382	23xunil^I|      ^I^I^I^I^I^I23xunil/nib$
+   383	46xunil^I|      ^I^I^I^I^I^I46xunil/nib$
+   384	crxunil^I^I^I^I^I^I^I^Icrxunil$
+   385	nl^I|      ^I^I^I^I^I^I^Inl/nib$
+   386	tnofdaol^I|      ^I^I^I^I^Itnofdaol/nibs/rsu$
+   387	pamkdaol^I|      ^I^I^I^I^I^Ipamkdaol/nibs$
+   388	reggol^I|      ^I^I^I^I^I^Ireggol/nib/rsu$
+   389	nigol^I|      ^I^I^I^I^I^Inigol/nib$
+   390	emangol^I|      ^I^I^I^I^I^Iemangol/nib/rsu$
+   391	daergol^I|      ^I^I^I^I^I^Idaergol/nibs$
+   392	putesol^I|      ^I^I^I^I^I^Iputesol/nibs$
+   393	sl^I|      ^I^I^I^I^I^I^Isl/nib$
+   394	domsl^I|      ^I^I^I^I^I^Idomsl/nibs$
+   395	iscssl^I|      ^I^I^I^I^I^Iiscssl/nib/rsu$
+   396	taczl^I|      ^I^I^I^I^I^Itaczl/nib/rsu$
+   397	amzl^I|      ^I^I^I^I^I^Iamzl/nib/rsu$
+   398	pozl^I|      ^I^I^I^I^I^Ipozl/nib$
+   399	mus5dm^I|      ^I^I^I^I^I^Imus5dm/nib/rsu$
+   400	vedm^I|      ^I^I^I^I^I^Ivedm/nibs$
+   401	mocorcim^I|      ^I^I^I^I^Imocorcim/nib/rsu$
+   402	mim^I|      ^I^I^I^I^I^Imim/nibs/rsu$
+   403	ridkm^I|      ^I^I^I^I^I^Iridkm/nib$
+   404	sfsodkm^I|      ^I^I^I^I^I^Isfsodkm/nibs$
+   405	sf2ekm^I|      ^I^I^I^I^I^Isf2ekm/nibs$
+   406	ofifkm^I|      ^I^I^I^I^I^Iofifkm/nib/rsu$
+   407	donkm^I|      ^I^I^I^I^I^Idonkm/nib$
+   408	dwssapkm^I|      ^I^I^I^I^Idwssapkm/nib/rsu$
+   409	pawskm^I|      ^I^I^I^I^I^Ipawskm/nibs$
+   410	pmetkm^I|      ^I^I^I^I^I^Ipmetkm/nib$
+   411	ofnidom^I|      ^I^I^I^I^I^Iofnidom/nibs$
+   412	eborpdom^I|      ^I^I^I^I^I^Ieborpdom/nibs$
+   413	erom^I|      ^I^I^I^I^I^Ierom/nib$
+   414	tnuom^I|      ^I^I^I^I^I^Itnuom/nib$
+   415	tm^I|      ^I^I^I^I^I^I^Itm/nib$
+   416	vm^I|      ^I^I^I^I^I^I^Ivm/nib$
+   417	fieman^I|      ^I^I^I^I^I^Ifieman/nibs$
+   418	tneilc-dbn^I|      ^I^I^I^I^Itneilc-dbn/nibs/rsu$
+   419	cn^I|      ^I^I^I^I^I^Icn/nib/rsu$
+   420	tatsten^I|      ^I^I^I^I^I^Itatsten/nib$
+   421	ln^I|      ^I^I^I^I^I^Iln/nib/rsu$
+   422	nigolon^I|      ^I^I^I^I^Inigolon/nibs/rsu$
+   423	corpn^I|      ^I^I^I^I^I^Icorpn/nib/rsu$
+   424	retnesn^I|      ^I^I^I^I^I^Iretnesn/nib/rsu$
+   425	pukoolsn^I|      ^I^I^I^I^Ipukoolsn/nib/rsu$
+   426	ekun^I|      ^I^I^I^I^I^Iekun/nib$
+   427	do^I|      ^I^I^I^I^I^Ido/nib/rsu$
+   428	tvnepo^I|      ^I^I^I^I^I^Itvnepo/nib/rsu$
+   429	eborptrap^I|      ^I^I^I^I^Ieborptrap/nibs/rsu$
+   430	dwssap^I|      ^I^I^I^I^I^Idwssap/nib/rsu$
+   431	etsap^I|      ^I^I^I^I^I^Ietsap/nib/rsu$
+   432	hctap^I|      ^I^I^I^I^I^Ihctap/nib/rsu$
+   433	fodip^I|      ^I^I^I^I^I^Ifodip/nib$
+   434	gnip^I|      ^I^I^I^I^I^Ignip/nib$
+   435	6gnip^I|      ^I^I^I^I^I^I6gnip/nib$
+   436	toor_tovip^I|      ^I^I^I^I^I^Itoor_tovip/nibs$
+   437	fforewop^I|      ^I^I^I^I^I^Ifforewop/nibs$
+   438	ftnirp^I|      ^I^I^I^I^I^Iftnirp/nib/rsu$
+   439	sp^I|      ^I^I^I^I^I^I^Isp/nib$
+   440	dwp^I|      ^I^I^I^I^I^I^Idwp/nib$
+   441	etadr^I|      ^I^I^I^I^I^Ietadr/nibs/rsu$
+   442	knildaer^I|      ^I^I^I^I^I^Iknildaer/nib$
+   443	htaplaer^I|      ^I^I^I^I^Ihtaplaer/nib/rsu$
+   444	toober^I|      ^I^I^I^I^I^Itoober/nibs$
+   445	eciner^I|      ^I^I^I^I^I^Ieciner/nib/rsu$
+   446	teser^I|      ^I^I^I^I^I^Iteser/nib/rsu$
+   447	emuser^I|      ^I^I^I^I^I^Iemuser/nib$
+   448	ver^I|      ^I^I^I^I^I^I^Iver/nib$
+   449	mr^I|      ^I^I^I^I^I^I^Imr/nib$
+   450	ridmr^I|      ^I^I^I^I^I^Iridmr/nib$
+   451	dommr^I|      ^I^I^I^I^I^Idommr/nibs$
+   452	etuor^I|      ^I^I^I^I^I^Ietuor/nibs$
+   453	mpr^I|      ^I^I^I^I^I^I^Impr/nib$
+   454	oipc2mpr^I|      ^I^I^I^I^Ioipc2mpr/nib/rsu$
+   455	tini-nur^I|      ^I^I^I^I^I^Itini-nur/nibs$
+   456	strap-nur^I|      ^I^I^I^I^I^Istrap-nur/nib$
+   457	des^I|      ^I^I^I^I^I^I^Ides/nib$
+   458	qes^I|      ^I^I^I^I^I^Iqes/nib/rsu$
+   459	sedocyektes^I|      ^I^I^I^I^Isedocyektes/nib/rsu$
+   460	virptes^I|      ^I^I^I^I^I^Ivirptes/nib$
+   461	distes^I|      ^I^I^I^I^I^Idistes/nib/rsu$
+   462	hs^I|      ^I^I^I^I^I^I^Ihs/nib$
+   463	mus1ahs^I|      ^I^I^I^I^I^Imus1ahs/nib/rsu$
+   464	mus652ahs^I|      ^I^I^I^I^Imus652ahs/nib/rsu$
+   465	mus3ahs^I|      ^I^I^I^I^I^Imus3ahs/nib/rsu$
+   466	mus215ahs^I|      ^I^I^I^I^Imus215ahs/nib/rsu$
+   467	derhs^I|      ^I^I^I^I^I^Iderhs/nib/rsu$
+   468	fuhs^I|      ^I^I^I^I^I^Ifuhs/nib/rsu$
+   469	peels^I|      ^I^I^I^I^I^Ipeels/nib$
+   470	tros^I|      ^I^I^I^I^I^Itros/nib/rsu$
+   471	tneilc_lss^I|      ^I^I^I^I^Itneilc_lss/nib/rsu$
+   472	nomead-pots-trats^I|      ^I^I^I^I^Inomead-pots-trats/nibs$
+   473	tats^I|      ^I^I^I^I^I^Itats/nib$
+   474	hs-citats^I|      ^I^I^I^I^I^Ihs-citats/nib$
+   475	sgnirts^I|      ^I^I^I^I^I^Isgnirts/nib/rsu$
+   476	ytts^I|      ^I^I^I^I^I^Iytts/nib$
+   477	us^I|      ^I^I^I^I^I^I^Ius/nib$
+   478	nigolus^I|      ^I^I^I^I^I^Inigolus/nibs$
+   479	cvs^I|      ^I^I^I^I^I^Icvs/nib/rsu$
+   480	kovs^I|      ^I^I^I^I^I^Ikovs/nib/rsu$
+   481	ffopaws^I|      ^I^I^I^I^I^Iffopaws/nibs$
+   482	nopaws^I|      ^I^I^I^I^I^Inopaws/nibs$
+   483	toor_hctiws^I|      ^I^I^I^I^Itoor_hctiws/nibs$
+   484	cnys^I|      ^I^I^I^I^I^Icnys/nib$
+   485	ltcsys^I|      ^I^I^I^I^I^Iltcsys/nibs$
+   486	dgolsys^I|      ^I^I^I^I^I^Idgolsys/nibs$
+   487	cat^I|      ^I^I^I^I^I^Icat/nib/rsu$
+   488	liat^I|      ^I^I^I^I^I^Iliat/nib/rsu$
+   489	rat^I|      ^I^I^I^I^I^I^Irat/nib$
+   490	tesksat^I|      ^I^I^I^I^I^Itesksat/nib/rsu$
+   491	ct^I|      ^I^I^I^I^I^I^Ict/nibs$
+   492	eet^I|      ^I^I^I^I^I^Ieet/nib/rsu$
+   493	tenlet^I|      ^I^I^I^I^I^Itenlet/nib/rsu$
+   494	dtenlet^I|      ^I^I^I^I^Idtenlet/nibs/rsu$
+   495	tset^I|      ^I^I^I^I^I^Itset/nib$
+   496	ptft^I|      ^I^I^I^I^I^Iptft/nib/rsu$
+   497	emit^I|      ^I^I^I^I^I^Iemit/nib/rsu$
+   498	tuoemit^I|      ^I^I^I^I^I^Ituoemit/nib/rsu$
+   499	pot^I|      ^I^I^I^I^I^Ipot/nib/rsu$
+   500	hcuot^I|      ^I^I^I^I^I^Ihcuot/nib$
+   501	rt^I|      ^I^I^I^I^I^Irt/nib/rsu$
+   502	etuorecart^I|      ^I^I^I^I^Ietuorecart/nib/rsu$
+   503	6etuorecart^I|      ^I^I^I^I^I6etuorecart/nib/rsu$
+   504	eurt^I|      ^I^I^I^I^I^Ieurt/nib$
+   505	etacnurt^I|      ^I^I^I^I^Ietacnurt/nib/rsu$
+   506	st^I|      ^I^I^I^I^I^Ist/nib/rsu$
+   507	ytt^I|      ^I^I^I^I^I^Iytt/nib/rsu$
+   508	ltcnut^I|      ^I^I^I^I^I^Iltcnut/nibs$
+   509	emaneribu^I|      ^I^I^I^I^Iemaneribu/nibs/rsu$
+   510	cpchdu^I|      ^I^I^I^I^I^Icpchdu/nibs$
+   511	6cpchdu^I|      ^I^I^I^I^I^I6cpchdu/nib/rsu$
+   512	dpchdu^I|      ^I^I^I^I^I^Idpchdu/nibs/rsu$
+   513	tneveu^I|      ^I^I^I^I^I^Itneveu/nibs$
+   514	tnuomu^I|      ^I^I^I^I^I^Itnuomu/nib$
+   515	emanu^I|      ^I^I^I^I^I^Iemanu/nib$
+   516	sserpmocnu^I|      ^I^I^I^I^I^Isserpmocnu/nib$
+   517	dnapxenu^I|      ^I^I^I^I^Idnapxenu/nib/rsu$
+   518	qinu^I|      ^I^I^I^I^I^Iqinu/nib/rsu$
+   519	sod2xinu^I|      ^I^I^I^I^Isod2xinu/nib/rsu$
+   520	knilnu^I|      ^I^I^I^I^I^Iknilnu/nib/rsu$
+   521	amzlnu^I|      ^I^I^I^I^I^Iamzlnu/nib/rsu$
+   522	erahsnu^I|      ^I^I^I^I^I^Ierahsnu/nib/rsu$
+   523	zxnu^I|      ^I^I^I^I^I^Izxnu/nib/rsu$
+   524	piznu^I|      ^I^I^I^I^I^Ipiznu/nib/rsu$
+   525	emitpu^I|      ^I^I^I^I^I^Iemitpu/nib/rsu$
+   526	peelsu^I|      ^I^I^I^I^I^Ipeelsu/nib$
+   527	edoceduu^I|      ^I^I^I^I^Iedoceduu/nib/rsu$
+   528	edocneuu^I|      ^I^I^I^I^Iedocneuu/nib/rsu$
+   529	gifnocv^I|      ^I^I^I^I^I^Igifnocv/nibs$
+   530	iv^I|      ^I^I^I^I^I^I^Iiv/nib$
+   531	w^I|      ^I^I^I^I^I^Iw/nib/rsu$
+   532	hctaw^I|      ^I^I^I^I^I^Ihctaw/nib$
+   533	godhctaw^I|      ^I^I^I^I^I^Igodhctaw/nibs$
+   534	cw^I|      ^I^I^I^I^I^Icw/nib/rsu$
+   535	tegw^I|      ^I^I^I^I^I^Itegw/nib/rsu$
+   536	hcihw^I|      ^I^I^I^I^I^Ihcihw/nib/rsu$
+   537	ohw^I|      ^I^I^I^I^I^Iohw/nib/rsu$
+   538	imaohw^I|      ^I^I^I^I^I^Iimaohw/nib/rsu$
+   539	sgrax^I|      ^I^I^I^I^I^Isgrax/nib/rsu$
+   540	dxx^I|      ^I^I^I^I^I^Idxx/nib/rsu$
+   541	zx^I|      ^I^I^I^I^I^Izx/nib/rsu$
+   542	taczx^I|      ^I^I^I^I^I^Itaczx/nib/rsu$
+   543	sey^I|      ^I^I^I^I^I^Isey/nib/rsu$
+   544	tacz^I|      ^I^I^I^I^I^Itacz/nib$
+   545	[$
+   546	[[$
+   547	acpid$
+   548	adjtimex$
+   549	ar$
+   550	arch$
+   551	arp$
+   552	arping$
+   553	ascii$
+   554	ash$
+   555	awk$
+   556	base64$
+   557	basename$
+   558	bc$
+   559	blkdiscard$
+   560	blockdev$
+   561	brctl$
+   562	bunzip2$
+   563	busybox$
+   564	bzcat$
+   565	bzip2$
+   566	cal$
+   567	cat$
+   568	chgrp$
+   569	chmod$
+   570	chown$
+   571	chpasswd$
+   572	chroot$
+   573	chvt$
+   574	clear$
+   575	cmp$
+   576	cp$
+   577	cpio$
+   578	crc32$
+   579	crond$
+   580	crontab$
+   581	cttyhack$
+   582	cut$
+   583	date$
+   584	dc$
+   585	dd$
+   586	deallocvt$
+   587	depmod$
+   588	devmem$
+   589	df$
+   590	diff$
+   591	dirname$
+   592	dmesg$
+   593	dnsdomainname$
+   594	dos2unix$
+   595	dpkg$
+   596	dpkg-deb$
+   597	du$
+   598	dumpkmap$
+   599	dumpleases$
+   600	echo$
+   601	ed$
+   602	egrep$
+   603	env$
+   604	expand$
+   605	expr$
+   606	factor$
+   607	fallocate$
+   608	false$
+   609	fatattr$
+   610	fdisk$
+   611	fgrep$
+   612	find$
+   613	findfs$
+   614	fold$
+   615	free$
+   616	freeramdisk$
+   617	fsfreeze$
+   618	fstrim$
+   619	ftpget$
+   620	ftpput$
+   621	getopt$
+   622	getty$
+   623	grep$
+   624	groups$
+   625	gunzip$
+   626	gzip$
+   627	halt$
+   628	head$
+   629	hexdump$
+   630	hostid$
+   631	hostname$
+   632	httpd$
+   633	hwclock$
+   634	i2cdetect$
+   635	i2cdump$
+   636	i2cget$
+   637	i2cset$
+   638	i2ctransfer$
+   639	id$
+   640	ifconfig$
+   641	ifdown$
+   642	ifup$
+   643	init$
+   644	insmod$
+   645	ionice$
+   646	ip$
+   647	ipcalc$
+   648	kill$
+   649	killall$
+   650	klogd$
+   651	last$
+   652	less$
+   653	link$
+   654	linux32$
+   655	linux64$
+   656	linuxrc$
+   657	ln$
+   658	loadfont$
+   659	loadkmap$
+   660	logger$
+   661	login$
+   662	logname$
+   663	logread$
+   664	losetup$
+   665	ls$
+   666	lsmod$
+   667	lsscsi$
+   668	lzcat$
+   669	lzma$
+   670	lzop$
+   671	md5sum$
+   672	mdev$
+   673	microcom$
+   674	mim$
+   675	mkdir$
+   676	mkdosfs$
+   677	mke2fs$
+   678	mkfifo$
+   679	mknod$
+   680	mkpasswd$
+   681	mkswap$
+   682	mktemp$
+   683	modinfo$
+   684	modprobe$
+   685	more$
+   686	mount$
+   687	mt$
+   688	mv$
+   689	nameif$
+   690	nbd-client$
+   691	nc$
+   692	netstat$
+   693	nl$
+   694	nologin$
+   695	nproc$
+   696	nsenter$
+   697	nslookup$
+   698	nuke$
+   699	od$
+   700	openvt$
+   701	partprobe$
+   702	passwd$
+   703	paste$
+   704	patch$
+   705	pidof$
+   706	ping$
+   707	ping6$
+   708	pivot_root$
+   709	poweroff$
+   710	printf$
+   711	ps$
+   712	pwd$
+   713	rdate$
+   714	readlink$
+   715	realpath$
+   716	reboot$
+   717	renice$
+   718	reset$
+   719	resume$
+   720	rev$
+   721	rm$
+   722	rmdir$
+   723	rmmod$
+   724	route$
+   725	rpm$
+   726	rpm2cpio$
+   727	run-init$
+   728	run-parts$
+   729	sed$
+   730	seq$
+   731	setkeycodes$
+   732	setpriv$
+   733	setsid$
+   734	sh$
+   735	sha1sum$
+   736	sha256sum$
+   737	sha3sum$
+   738	sha512sum$
+   739	shred$
+   740	shuf$
+   741	sleep$
+   742	sort$
+   743	ssl_client$
+   744	start-stop-daemon$
+   745	stat$
+   746	static-sh$
+   747	strings$
+   748	stty$
+   749	su$
+   750	sulogin$
+   751	svc$
+   752	svok$
+   753	swapoff$
+   754	swapon$
+   755	switch_root$
+   756	sync$
+   757	sysctl$
+   758	syslogd$
+   759	tac$
+   760	tail$
+   761	tar$
+   762	taskset$
+   763	tc$
+   764	tee$
+   765	telnet$
+   766	telnetd$
+   767	test$
+   768	tftp$
+   769	time$
+   770	timeout$
+   771	top$
+   772	touch$
+   773	tr$
+   774	traceroute$
+   775	traceroute6$
+   776	true$
+   777	truncate$
+   778	ts$
+   779	tty$
+   780	tunctl$
+   781	ubirename$
+   782	udhcpc$
+   783	udhcpc6$
+   784	udhcpd$
+   785	uevent$
+   786	umount$
+   787	uname$
+   788	uncompress$
+   789	unexpand$
+   790	uniq$
+   791	unix2dos$
+   792	unlink$
+   793	unlzma$
+   794	unshare$
+   795	unxz$
+   796	unzip$
+   797	uptime$
+   798	usleep$
+   799	uudecode$
+   800	uuencode$
+   801	vconfig$
+   802	vi$
+   803	w$
+   804	watch$
+   805	watchdog$
+   806	wc$
+   807	wget$
+   808	which$
+   809	who$
+   810	whoami$
+   811	xargs$
+   812	xxd$
+   813	xz$
+   814	xzcat$
+   815	yes$
+   816	zcat$

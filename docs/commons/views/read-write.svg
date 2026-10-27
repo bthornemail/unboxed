@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="300" width="275" xml:space="preserve" stroke-linecap="round" stroke-linejoin="round">
+<g fill-rule="evenodd" stroke="#000" stroke-width="1px" fill="#fff">
+<path d="m50 50h200v200h-200v-200z"/>
+<path d="m150 50v200"/>
+<path d="m50 150.34h200"/>
+<path d="m50 100.84h200"/>
+<path d="m50 200.19h200"/>
+<path d="m100 50v200"/>
+<path d="m200 50v200"/>
+<path d="m50 50.375l-15-15.375"/>
+</g>
+<rect fill-opacity=".50196" height="40" width="90" stroke="navy" y="205" x="105" stroke-width="2" fill="blue"/>
+<rect fill-opacity=".50196" height="40" width="90" stroke="#004184" y="155" x="105" stroke-width="2"/>
+<g fill-opacity=".50196" stroke-width="2">
+<rect height="190" width="40" stroke="green" y="55" x="205" fill="lime"/>
+<rect height="90" width="90" stroke="#c20000" y="55" x="155" fill="red"/>
+<rect height="190" width="40" stroke="#5e200e" y="55" x="55"/>
+</g>
+<rect fill-opacity=".50196" height="90" width="90" stroke="#926700" y="55" x="55" stroke-width="2"/>
+<g font-size="12px" font-family="Bitstream Vera Sans" fill="black">
+<text y="22.496094" x="133.82812" line-height="125%"><tspan font-size="24px" y="22.496094" x="133.82812">AB</tspan></text>
+<text transform="rotate(-90)" y="24.660156" x="-166.34766" line-height="100%"><tspan font-size="24px" y="24.660156" x="-166.34766">CD</tspan></text>
+<text y="43.90625" x="64.208984"><tspan x="64.208984" y="43.90625">00</tspan></text>
+<text y="43.90625" x="116.55632"><tspan x="116.55632" y="43.90625">01</tspan></text>
+<text y="43.748047" x="168.48471"><tspan x="168.48471" y="43.748047">11</tspan></text>
+<text y="43.90625" x="220.52148"><tspan x="220.52148" y="43.90625">10</tspan></text>
+<text transform="rotate(-90)" y="43.90625" x="-80.791016"><tspan x="-80.791016" y="43.90625">00</tspan></text>
+<text transform="rotate(-90)" y="43.90625" x="-131.77701"><tspan x="-131.77701" y="43.90625">01</tspan></text>
+<text transform="rotate(-90)" y="43.748047" x="-183.18196"><tspan x="-183.18196" y="43.748047">11</tspan></text>
+<text transform="rotate(-90)" y="43.90625" x="-234.47852"><tspan x="-234.47852" y="43.90625">10</tspan></text>
+<text y="80.829102" x="69.5"><tspan x="69.5" y="80.829102">0</tspan></text>
+<text y="80.829102" x="119.75"><tspan x="119.75" y="80.829102">0</tspan></text>
+<text y="80.834961" x="169.24609"><tspan x="169.24609" y="80.834961">1</tspan></text>
+<text y="80.834961" x="219.5"><tspan x="219.5" y="80.834961">1</tspan></text>
+<text y="130.41504" x="69.5"><tspan x="69.5" y="130.41504">0</tspan></text>
+<text y="130.41504" x="119.75"><tspan x="119.75" y="130.41504">0</tspan></text>
+<text y="130.4209" x="169.24609"><tspan x="169.24609" y="130.4209">1</tspan></text>
+<text y="130.4209" x="219.5"><tspan x="219.5" y="130.4209">1</tspan></text>
+<text y="181" x="69.5"><tspan x="69.5" y="181">0</tspan></text>
+<text y="181" x="119.75"><tspan x="119.75" y="181">0</tspan></text>
+<text y="181" x="169.35449"><tspan x="169.35449" y="181">0</tspan></text>
+<text y="181.00586" x="219.5"><tspan x="219.5" y="181.00586">1</tspan></text>
+<text y="231.33496" x="219.5"><tspan x="219.5" y="231.33496">1</tspan></text>
+<text y="231.33496" x="169.24609"><tspan x="169.24609" y="231.33496">1</tspan></text>
+<text y="231.33496" x="119.6416"><tspan x="119.6416" y="231.33496">1</tspan></text>
+<text y="231.3291" x="69.5"><tspan x="69.5" y="231.3291">0</tspan></text>
+<text y="264.11719" x="26.193359"><tspan x="26.193359" y="264.11719">f(A,B,C,D) = E(6,8,9,10,11,12,13,14)</tspan></text>
+<text y="279.71484" x="25.291016"><tspan x="25.291016" y="279.71484">F=<tspan fill="#c20000">AC&apos;</tspan><tspan>+</tspan><tspan fill="green">AB&apos;</tspan><tspan>+</tspan><tspan fill="navy">BCD&apos;</tspan></tspan></text>
+<text y="294.10547" x="25.291016"><tspan x="25.291016" y="294.10547">F=<tspan fill="#5e200e">(A+B)</tspan><tspan fill="#926700">(A+C)</tspan><tspan fill="#004184">(B&apos;+C&apos;+D&apos;)</tspan></tspan></text>
+</g>
+</svg>

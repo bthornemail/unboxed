@@ -127,3 +127,20 @@ GitHub Pages publishes the same `docs/` folder, so the entry is also hosted at t
 repository's Pages URL. A `.nojekyll` marker keeps the module and SVG served raw
 (no Jekyll processing); the app uses only relative paths, so it works at the Pages
 sub-path unchanged.
+
+## The Commons — public presentation
+
+`docs/commons/` is a bright, public-facing gate: one shared form (the proven
+8-step delta clock, and the 2-bit atom read four ways) with six portals, each a
+lens on the same invariants through a well-known diagram. Serve `docs/` and open
+`/commons/` — the page inlines the SVG so every portal works, and each lens has
+its own slide (← → to move, Esc to return). The six images are unmodified files
+from Wikimedia Commons, credited with their licenses on every slide.
+The second slide, `tree.svg`, draws Genesis 1–11 as a tree of literals from the
+Leningrad Codex, with the forty-days, tree-of-life and covenant lines plotted
+across scripture. It is generated; every Hebrew word in it is checked against
+the verse it cites.
+
+```sh
+busybox httpd -f -p 8080 -h docs   # then http://127.0.0.1:8080/commons/
+```

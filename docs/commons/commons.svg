@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1900" id="the-commons-gate">
+  <metadata id="root-data"><![CDATA[{"law":{"K":"rotl(p,1)^rotl(p,3)^rotr(p,2)^C","C":"0x1D","period":8,"seed":"0x4242","verified":["C","python","qemu-virt-ctrl","coq"]},"cycle":[{"step":0,"state":"0x4242","color":"#442244","alpha_nibble":2},{"step":1,"state":"0x061B","color":"#006611","alpha_nibble":11},{"step":2,"state":"0xFD75","color":"#ffdd77","alpha_nibble":5},{"step":3,"state":"0x6E04","color":"#66ee00","alpha_nibble":4},{"step":4,"state":"0xB7B7","color":"#bb77bb","alpha_nibble":7},{"step":5,"state":"0x3F22","color":"#33ff22","alpha_nibble":2},{"step":6,"state":"0x0880","color":"#008888","alpha_nibble":0},{"step":7,"state":"0x573D","color":"#557733","alpha_nibble":13}],"invariants":{"two_bit_alphabet":{"ops":["<","=",">","?"],"bases":["A","C","G","T/U"],"isof":["IS","IF","OS","OF"],"cells":["00","01","10","11"],"note":"FILE{0|1}{0|1} \u2014 one 2-bit atom, four lenses, from one root"},"e8":{"type1":112,"type2":128,"roots":240,"norm_sq":2,"proof":"coq/E8RootsEnumerate240.v"},"sexagesimal":{"pivot":60,"low_top":63,"high_pivot":124,"high_top":127,"region_bit":"0x40"},"fano":7,"atlas":{"total":5040,"boundary":4320,"block":720}},"share":{"low_bits":"structure (8/12 agents) \u2014 agreement","high_bits":"story/frame \u2014 freedom"}}]]></metadata>
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#2b3440" flood-opacity="0.18"/></filter>
+    <filter id="card" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#2b3440" flood-opacity="0.12"/></filter>
+    <style>
+      .title{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:46px;font-weight:700;fill:#2b3440;}
+      .subtitle{font-family:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13px;font-weight:700;fill:#8a94a0;letter-spacing:2px;}
+      .section{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:22px;font-weight:600;fill:#2b3440;}
+      .mono{font-family:ui-monospace,"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;fill:#6b7684;}
+      .step{font-family:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:9px;font-weight:700;}
+      .hex{font-family:ui-monospace,"IBM Plex Mono",Menlo,Consolas,monospace;font-size:12px;font-weight:500;}
+      .note{font-family:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:10px;font-weight:600;fill:#9aa3ad;}
+      .quote{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:19px;font-weight:500;fill:#ff6600;}
+      .quote-sm{font-family:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13px;font-weight:700;fill:#6b7684;}
+      .ring{fill:none;stroke:#e4e4dc;stroke-width:1;} .spoke{stroke:#e4e4dc;stroke-width:1;}
+      .star{fill:none;stroke:#d8d8ce;stroke-width:1.25;opacity:0.8;} .node{stroke:#ffffff;stroke-width:4;}
+      .glab{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-anchor:middle;}
+      .celllab{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:19px;font-weight:600;fill:#2b3440;text-anchor:middle;}
+      .celladdr{font-family:ui-monospace,"IBM Plex Mono",Menlo,Consolas,monospace;font-size:7px;fill:#aab2bb;}
+      .portal{cursor:pointer;} .portal .plabel{font-family:"Fredoka",ui-rounded,"Arial Rounded MT Bold","Nunito",system-ui,sans-serif;font-size:16px;font-weight:600;}
+      .portal .pdesc{font-family:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:9px;font-weight:600;fill:#6b7684;}
+      .portal:hover .pbg{stroke-width:2.5;}
+    </style>
+  </defs>
+  <rect width="1200" height="1900" fill="#fbfbf7"/>
+  <circle cx="200" cy="200" r="520" fill="#0066ff" opacity="0.04"/>
+  <circle cx="1050" cy="520" r="420" fill="#ff6600" opacity="0.05"/>
+  <circle cx="600" cy="1700" r="500" fill="#00aa00" opacity="0.04"/>
+  <g transform="translate(600,86)"><text x="0" y="0" text-anchor="middle" class="title">The Commons</text>
+    <text x="0" y="30" text-anchor="middle" class="subtitle">A SHARED FORM &#183; THE STORY IS YOURS</text>
+    <rect x="-44" y="44" width="88" height="5" rx="2.5" fill="#ffcc00"/></g>
+  <circle cx="600" cy="610" r="334" class="ring"/>
+  <circle cx="600" cy="610" r="300" class="ring"/>
+  <circle cx="600" cy="610" r="230" class="ring"/>
+  <circle cx="600" cy="610" r="160" class="ring"/>
+  <circle cx="600" cy="610" r="90" class="ring"/>
+  <line x1="600" y1="610" x2="600.0" y2="310.0" class="spoke"/>
+  <line x1="600" y1="610" x2="812.1" y2="397.9" class="spoke"/>
+  <line x1="600" y1="610" x2="900.0" y2="610.0" class="spoke"/>
+  <line x1="600" y1="610" x2="812.1" y2="822.1" class="spoke"/>
+  <line x1="600" y1="610" x2="600.0" y2="910.0" class="spoke"/>
+  <line x1="600" y1="610" x2="387.9" y2="822.1" class="spoke"/>
+  <line x1="600" y1="610" x2="300.0" y2="610.0" class="spoke"/>
+  <line x1="600" y1="610" x2="387.9" y2="397.9" class="spoke"/>
+  <polyline points="600.0,310.0 812.1,822.1 300.0,610.0 812.1,397.9 600.0,910.0 387.9,397.9 900.0,610.0 387.9,822.1 600.0,310.0" class="star"/>
+  <g id="gnomon"><polygon points="600,610 593,610 600,340" fill="#2b3440" opacity="0.6"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 600 610;45 600 610;90 600 610;135 600 610;180 600 610;225 600 610;270 600 610;315 600 610;360 600 610" keyTimes="0.000;0.125;0.250;0.375;0.500;0.625;0.750;0.875;1.000" dur="6s" calcMode="discrete" repeatCount="indefinite"/></g>
+  <circle cx="600" cy="610" r="32" fill="#ffffff" stroke="#ffcc00" stroke-width="4" filter="url(#soft)"/><text x="600" y="618" text-anchor="middle" class="section" style="font-size:26px;fill:#ff6600;">&#948;</text>
+  <g><circle id="hl0" cx="600.0" cy="310.0" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="0.0s" repeatCount="indefinite"/></circle>
+    <circle cx="600.0" cy="310.0" r="46" fill="#442244" class="node" filter="url(#soft)"/>
+    <text x="600.0" y="307.0" text-anchor="middle" class="step" fill="#ffffff">step 0</text>
+    <text x="600.0" y="322.0" text-anchor="middle" class="hex" fill="#ffffff">0x4242</text></g>
+  <g><circle id="hl1" cx="812.1" cy="397.9" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="0.75s" repeatCount="indefinite"/></circle>
+    <circle cx="812.1" cy="397.9" r="46" fill="#006611" class="node" filter="url(#soft)"/>
+    <text x="812.1" y="394.9" text-anchor="middle" class="step" fill="#ffffff">step 1</text>
+    <text x="812.1" y="409.9" text-anchor="middle" class="hex" fill="#ffffff">0x061B</text></g>
+  <g><circle id="hl2" cx="900.0" cy="610.0" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="1.5s" repeatCount="indefinite"/></circle>
+    <circle cx="900.0" cy="610.0" r="46" fill="#ffdd77" class="node" filter="url(#soft)"/>
+    <text x="900.0" y="607.0" text-anchor="middle" class="step" fill="#15181d">step 2</text>
+    <text x="900.0" y="622.0" text-anchor="middle" class="hex" fill="#15181d">0xFD75</text></g>
+  <g><circle id="hl3" cx="812.1" cy="822.1" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="2.25s" repeatCount="indefinite"/></circle>
+    <circle cx="812.1" cy="822.1" r="46" fill="#66ee00" class="node" filter="url(#soft)"/>
+    <text x="812.1" y="819.1" text-anchor="middle" class="step" fill="#15181d">step 3</text>
+    <text x="812.1" y="834.1" text-anchor="middle" class="hex" fill="#15181d">0x6E04</text></g>
+  <g><circle id="hl4" cx="600.0" cy="910.0" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="3.0s" repeatCount="indefinite"/></circle>
+    <circle cx="600.0" cy="910.0" r="46" fill="#bb77bb" class="node" filter="url(#soft)"/>
+    <text x="600.0" y="907.0" text-anchor="middle" class="step" fill="#15181d">step 4</text>
+    <text x="600.0" y="922.0" text-anchor="middle" class="hex" fill="#15181d">0xB7B7</text></g>
+  <g><circle id="hl5" cx="387.9" cy="822.1" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="3.75s" repeatCount="indefinite"/></circle>
+    <circle cx="387.9" cy="822.1" r="46" fill="#33ff22" class="node" filter="url(#soft)"/>
+    <text x="387.9" y="819.1" text-anchor="middle" class="step" fill="#15181d">step 5</text>
+    <text x="387.9" y="834.1" text-anchor="middle" class="hex" fill="#15181d">0x3F22</text></g>
+  <g><circle id="hl6" cx="300.0" cy="610.0" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="300.0" cy="610.0" r="46" fill="#008888" class="node" filter="url(#soft)"/>
+    <text x="300.0" y="607.0" text-anchor="middle" class="step" fill="#ffffff">step 6</text>
+    <text x="300.0" y="622.0" text-anchor="middle" class="hex" fill="#ffffff">0x0880</text></g>
+  <g><circle id="hl7" cx="387.9" cy="397.9" r="54" fill="none" stroke="#ffcc00" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="6s" begin="5.25s" repeatCount="indefinite"/></circle>
+    <circle cx="387.9" cy="397.9" r="46" fill="#557733" class="node" filter="url(#soft)"/>
+    <text x="387.9" y="394.9" text-anchor="middle" class="step" fill="#ffffff">step 7</text>
+    <text x="387.9" y="409.9" text-anchor="middle" class="hex" fill="#ffffff">0x573D</text></g>
+  <text id="clock" x="600" y="256" text-anchor="middle" class="mono" style="fill:#0066ff;font-weight:500;">&#9733; reading the root &#9733;</text>
+  <g transform="translate(600,984)"><text x="0" y="0" text-anchor="middle" class="section">The Delta Clock</text>
+    <text x="0" y="30" text-anchor="middle" class="mono" style="font-size:13px;fill:#0066ff;">K(p,C) = rotl(p,1) &#8853; rotl(p,3) &#8853; rotr(p,2) &#8853; C</text>
+    <text x="0" y="48" text-anchor="middle" class="note">C = 0x1D &#183; period 8 &#183; seed 0x4242 &#183; verified in C, Python, QEMU, Coq</text></g>
+  <g transform="translate(600,1110)"><rect x="-370" y="-30" width="740" height="98" rx="18" fill="#ffffff" stroke="#ffe6a6" stroke-width="2" filter="url(#card)"/>
+    <text x="0" y="0" text-anchor="middle" class="quote">The form is fixed. The reference is yours.</text>
+    <text x="0" y="26" text-anchor="middle" class="quote-sm">Low bits are the structure we share; high bits are the story you bring.</text>
+    <text x="0" y="48" text-anchor="middle" class="quote-sm" style="fill:#9aa3ad;">Agreement is the shared frame &#183; freedom is what you attach.</text></g>
+  <g transform="translate(600,1252)"><text x="0" y="0" text-anchor="middle" class="section">One Atom, Four Lenses</text>
+    <text x="0" y="24" text-anchor="middle" class="note">FILE{0|1}{0|1} &#8212; the same four corners, read four ways, from one shared node</text></g>
+  <rect x="262" y="1296" width="136" height="136" rx="14" fill="#eaf2ff" filter="url(#card)"/>
+  <text x="330" y="1288" class="glab" fill="#0066ff">COMPARISON</text>
+  <rect x="272" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="299" y="1339" class="celllab">&lt;</text>
+  <text x="321" y="1356" text-anchor="end" class="celladdr">00</text>
+  <rect x="334" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="361" y="1339" class="celllab">=</text>
+  <text x="383" y="1356" text-anchor="end" class="celladdr">01</text>
+  <rect x="272" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="299" y="1401" class="celllab">&gt;</text>
+  <text x="321" y="1418" text-anchor="end" class="celladdr">10</text>
+  <rect x="334" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="361" y="1401" class="celllab">?</text>
+  <text x="383" y="1418" text-anchor="end" class="celladdr">11</text>
+  <rect x="442" y="1296" width="136" height="136" rx="14" fill="#e8f7e8" filter="url(#card)"/>
+  <text x="510" y="1288" class="glab" fill="#00aa00">BASES</text>
+  <rect x="452" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="479" y="1339" class="celllab">A</text>
+  <text x="501" y="1356" text-anchor="end" class="celladdr">00</text>
+  <rect x="514" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="541" y="1339" class="celllab">C</text>
+  <text x="563" y="1356" text-anchor="end" class="celladdr">01</text>
+  <rect x="452" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="479" y="1401" class="celllab">G</text>
+  <text x="501" y="1418" text-anchor="end" class="celladdr">10</text>
+  <rect x="514" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="541" y="1401" class="celllab">T/U</text>
+  <text x="563" y="1418" text-anchor="end" class="celladdr">11</text>
+  <rect x="622" y="1296" width="136" height="136" rx="14" fill="#fff0e6" filter="url(#card)"/>
+  <text x="690" y="1288" class="glab" fill="#ff6600">RELATION</text>
+  <rect x="632" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="659" y="1339" class="celllab">IS</text>
+  <text x="681" y="1356" text-anchor="end" class="celladdr">00</text>
+  <rect x="694" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="721" y="1339" class="celllab">IF</text>
+  <text x="743" y="1356" text-anchor="end" class="celladdr">01</text>
+  <rect x="632" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="659" y="1401" class="celllab">OS</text>
+  <text x="681" y="1418" text-anchor="end" class="celladdr">10</text>
+  <rect x="694" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="721" y="1401" class="celllab">OF</text>
+  <text x="743" y="1418" text-anchor="end" class="celladdr">11</text>
+  <rect x="802" y="1296" width="136" height="136" rx="14" fill="#f2eaff" filter="url(#card)"/>
+  <text x="870" y="1288" class="glab" fill="#8b3dff">ADDRESS</text>
+  <rect x="812" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="839" y="1339" class="celllab">00</text>
+  <text x="861" y="1356" text-anchor="end" class="celladdr">00</text>
+  <rect x="874" y="1306" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="901" y="1339" class="celllab">01</text>
+  <text x="923" y="1356" text-anchor="end" class="celladdr">01</text>
+  <rect x="812" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="839" y="1401" class="celllab">10</text>
+  <text x="861" y="1418" text-anchor="end" class="celladdr">10</text>
+  <rect x="874" y="1368" width="54" height="54" rx="9" fill="#ffffff"/>
+  <text x="901" y="1401" class="celllab">11</text>
+  <text x="923" y="1418" text-anchor="end" class="celladdr">11</text>
+  <text x="600" y="1452" text-anchor="middle" class="note">car &#183; cdr = row &#183; column &#8212; (0,0) top-left &#8230; (1,1) bottom-right &#8212; the Pair as an address</text>
+  <g transform="translate(600,1512)"><text x="0" y="0" text-anchor="middle" class="section">Enter Through a Lens</text></g>
+  <a xlink:href="index.html#torus" href="index.html#torus" target="_top"><g class="portal" transform="translate(116,1546)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#eaf2ff" stroke="#0066ff" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#0066ff"/>
+    <text x="48" y="34" class="plabel" fill="#0066ff">The Torus</text>
+    <text x="48" y="56" class="pdesc">the plane is a projection of a torus</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#0066ff" style="font-size:22px;">&#8594;</text></g></a>
+  <a xlink:href="index.html#read-write" href="index.html#read-write" target="_top"><g class="portal" transform="translate(458,1546)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#e8f7e8" stroke="#00aa00" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#00aa00"/>
+    <text x="48" y="34" class="plabel" fill="#00aa00">Read &amp; Write</text>
+    <text x="48" y="56" class="pdesc">group the 1s / group the 0s &#183; XOR / XNOR</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#00aa00" style="font-size:22px;">&#8594;</text></g></a>
+  <a xlink:href="index.html#carry" href="index.html#carry" target="_top"><g class="portal" transform="translate(800,1546)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#fff0e6" stroke="#ff6600" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#ff6600"/>
+    <text x="48" y="34" class="plabel" fill="#ff6600">The Carry</text>
+    <text x="48" y="56" class="pdesc">the carry predicted at bit 4</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#ff6600" style="font-size:22px;">&#8594;</text></g></a>
+  <a xlink:href="index.html#strand" href="index.html#strand" target="_top"><g class="portal" transform="translate(116,1644)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#ffecec" stroke="#d40000" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#d40000"/>
+    <text x="48" y="34" class="plabel" fill="#d40000">The Strand</text>
+    <text x="48" y="56" class="pdesc">a 2-bit complement, read in reverse</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#d40000" style="font-size:22px;">&#8594;</text></g></a>
+  <a xlink:href="index.html#reflection" href="index.html#reflection" target="_top"><g class="portal" transform="translate(458,1644)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#f2eaff" stroke="#8b3dff" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#8b3dff"/>
+    <text x="48" y="34" class="plabel" fill="#8b3dff">The Reflection</text>
+    <text x="48" y="56" class="pdesc">the plane folded into a disk &#183; &#915;</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#8b3dff" style="font-size:22px;">&#8594;</text></g></a>
+  <a xlink:href="index.html#path" href="index.html#path" target="_top"><g class="portal" transform="translate(800,1644)">
+    <rect class="pbg" x="0" y="0" width="326" height="80" rx="16" fill="#fff6da" stroke="#e6a800" stroke-width="1.5" filter="url(#card)"/>
+    <circle cx="26" cy="40" r="9" fill="#e6a800"/>
+    <text x="48" y="34" class="plabel" fill="#e6a800">The Path</text>
+    <text x="48" y="56" class="pdesc">multiply by tracing, read by position</text>
+    <text x="306" y="48" text-anchor="end" class="plabel" fill="#e6a800" style="font-size:22px;">&#8594;</text></g></a>
+  <g transform="translate(600,1846)"><rect x="-120" y="-16" width="240" height="4" rx="2" fill="#ffcc00"/>
+    <text x="0" y="14" text-anchor="middle" class="subtitle" style="fill:#aab2bb;">THE LIGHT GARDEN &#183; ONE FORM, MANY STORIES</text></g>
+  <script type="text/javascript"><![CDATA[
+// THE INTERFACE CARRIER — inline mirror of rosetta/src/grammar/interface.ts,
+// kept inline so this stays one self-contained SVG (no imports, no bundler).
+var CARRIER = {
+  Proxy: Proxy,
+  Reflect: Reflect,
+  // Catch carries an outcome instead of swallowing the exception
+  "catch": function (run) {
+    try { return { ok: true, value: run() }; }
+    catch (error) { return { ok: false, error: error }; }
+  },
+  // a tagged template preserves the literal strings separately from its values
+  template: function (strings) {
+    var values = Array.prototype.slice.call(arguments, 1);
+    return Object.freeze({
+      strings: strings, raw: strings.raw, values: Object.freeze(values.slice()),
+      text: String.raw.apply(null, [{ raw: strings.raw }].concat(values))
+    });
+  }
+};
+
+// Prompt prompts the universe; any query binds a root complex.
+// Modeled on main() + try/catch/finally: carrier in, templates out.
+function Prompt(io) {
+  var tpl = io.template, Catch = io["catch"], Reflect_ = io.Reflect, Proxy_ = io.Proxy;
+  var bound = false;
+  try {
+    // the root complex (the universe's invariants), read from the CDATA tree
+    var base = JSON.parse(document.getElementById('root-data').textContent);
+    // accessed through a Proxy so any lens path is resolvable — always extendable
+    var root = new Proxy_(base, {
+      get: function (t, k, r) { return (k in t) ? Reflect_.get(t, k, r) : undefined; }
+    });
+    var period = root.law.period, i = 0, clock = document.getElementById('clock');
+    // the stepper: RangeError is the range that says no
+    function at(n) {
+      if (!(Number.isInteger(n) && n >= 0 && n < period))
+        throw new RangeError('step ' + n + ' out of [0,' + period + ')');
+      return root.cycle[n];
+    }
+    function tick() {
+      var res = Catch(function () { return at(i % period); }); // CatchResult {ok,value}|{ok,error}
+      var f = res.ok ? res.value : at(0);
+      // the story as a template: literals are the form, ${values} the reference
+      var line = tpl`step ${f.step} · ${f.state} · ${f.color} · K=${root.law.K}`;
+      clock.textContent = line.text;
+      for (var k = 0; k < period; k++) {
+        var hl = document.getElementById('hl' + k);
+        if (hl) hl.setAttribute('opacity', k === (i % period) ? '0.9' : '0');
+      }
+      i++;
+    }
+    bound = true; tick(); setInterval(tick, 750);
+    // stage 4 swaps the interval for an OfflineAudioContext clock + a VTTCue track.
+  } catch (e) {
+    // the boundary: SMIL still animates (progressive enhancement if JS is off)
+  } finally {
+    // always runs: the universe reports whether Prompt bound the root complex
+    document.documentElement.setAttribute('data-prompt', bound ? 'bound' : 'smil-only');
+  }
+}
+
+Prompt(CARRIER);
+]]></script>
+</svg>

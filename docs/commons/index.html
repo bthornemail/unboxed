@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Commons</title>
+<meta name="description" content="One shared form, many stories: a public gate to the framework, with six lenses on the same small invariants.">
+<style>
+  :root {
+    --bg: #fbfbf7; --ink: #2b3440; --muted: #6b7684; --faint: #9aa3ad;
+    --card: #ffffff; --line: #e4e4dc;
+    --blue: #0066ff; --green: #00aa00; --orange: #ff6600;
+    --red: #d40000; --purple: #8b3dff; --gold: #b58400;
+    --round: "Fredoka", ui-rounded, "Arial Rounded MT Bold", "Nunito", system-ui, sans-serif;
+    --body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "IBM Plex Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); }
+  a { color: var(--blue); }
+  header {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 10px 16px; background: rgba(251, 251, 247, 0.94);
+    border-bottom: 1px solid var(--line);
+  }
+  header .home { font-family: var(--round); font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  header nav { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+  button, .btn {
+    font: 700 14px var(--body); color: var(--ink); background: var(--card);
+    border: 1.5px solid var(--line); border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; text-decoration: none;
+  }
+  button:hover, .btn:hover, button:focus-visible, .btn:focus-visible { border-color: var(--blue); color: var(--blue); outline: none; }
+  .count { font: 500 13px var(--mono); color: var(--muted); min-width: 4.5em; text-align: center; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  section.slide { display: none; padding: 8px 0 40px; }
+  section.slide.on { display: block; }
+  #commons .stage { max-width: 760px; margin: 0 auto; }
+  #commons .stage svg, #commons .stage object { width: 100%; height: auto; display: block; }
+  .hint { text-align: center; font-size: 13px; color: var(--faint); margin-top: 6px; }
+  .lens { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  @media (min-width: 860px) { .lens { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
+  .kicker { font: 800 12px var(--body); letter-spacing: 2px; text-transform: uppercase; }
+  .lens h2, .credits h2 { font-family: var(--round); font-size: 34px; line-height: 1.1; margin: 6px 0 10px; }
+  .lens p { font-size: 17px; line-height: 1.6; margin: 0 0 12px; }
+  .lens .ties {
+    font-size: 15px; line-height: 1.55; color: var(--muted);
+    border-left: 4px solid var(--line); padding: 2px 0 2px 12px;
+  }
+  .figure {
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 18px;
+    padding: 14px; box-shadow: 0 2px 10px rgba(43, 52, 64, 0.08);
+  }
+  .figure img { width: 100%; height: auto; max-height: 70vh; object-fit: contain; display: block; }
+  .credit { font-size: 12px; color: var(--faint); margin-top: 10px; }
+  .credit a { color: var(--muted); }
+  .pager { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
+  .credits table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  .credits th, .credits td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .credits th { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .credits .wrap { overflow-x: auto; }
+  .credits ul { line-height: 1.7; padding-left: 20px; }
+  code { font-family: var(--mono); font-size: 0.92em; }
+</style>
+</head>
+<body>
+<header>
+  <a class="home" href="#commons">The Commons</a>
+  <nav aria-label="Slides">
+    <button type="button" id="prev" aria-label="Previous slide">&larr;</button>
+    <span class="count" id="count" aria-live="polite">1 / 9</span>
+    <button type="button" id="next" aria-label="Next slide">&rarr;</button>
+    <a class="btn" href="#credits">Credits</a>
+  </nav>
+</header>
+
+<main>
+  <section class="slide" id="commons" aria-label="The Commons">
+    <div class="stage" id="stage">Loading the commons&hellip;</div>
+    <p class="hint">Tap a lens to enter &middot; &larr; &rarr; to move &middot; Esc returns here</p>
+  </section>
+
+  <section class="slide" id="tree" aria-label="The Tree of Literals">
+    <div class="kicker" style="color:var(--green)">The tree</div>
+    <h2 style="font-family:var(--round);font-size:34px;margin:6px 0 10px">The tree of literals</h2>
+    <p style="font-size:17px;line-height:1.6;max-width:62ch">Genesis 1–11 drawn from the Leningrad Codex: six days that close and a seventh left open, two trees, names taken from names, two lines of ten generations with the Flood and Babel as hinges, and three lines that run on through scripture. Every Hebrew word shown is checked against the verse it cites; the counts can be rerun.</p>
+    <div class="figure"><img src="tree.svg" alt="Genesis 1 to 11 as a tree of literals from the Leningrad Codex, with the forty-days, tree-of-life and covenant lines plotted across scripture"></div>
+    <div class="credit">Hebrew: Westminster Leningrad Codex (public domain), via Sefaria. Greek verses appear as references only.</div>
+  </section>
+
+  <section class="slide" id="torus" aria-label="The Torus">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--blue)">Lens 1 &middot; The Torus</div>
+        <h2>A flat map that is secretly a donut</h2>
+        <p>A Karnaugh map lays out every combination of a few yes/no inputs on a grid, arranged so that neighbours differ in exactly one input. The edges wrap around: the right side touches the left, the top touches the bottom. Fold it and the flat grid becomes a torus.</p>
+        <p class="ties">The commons is laid out the same way: one place sits beside another when they differ by a single bit. The flat drawing is a view; the wrap-around is the real shape.</p>
+      </div>
+      <div class="figure">
+        <img src="views/torus.svg" alt="A 4 by 4 Karnaugh map drawn both flat and wrapped onto a torus" loading="lazy">
+        <div class="credit">Karnaugh map torus &middot; Cmglee &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Karnaugh_map_torus.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="read-write" aria-label="Read and Write">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--green)">Lens 2 &middot; Read &amp; Write</div>
+        <h2>One map, two readings</h2>
+        <p>Circle the groups of 1s and you get a short formula for the function. Circle the groups of 0s instead and you get its exact opposite. Same map, same cells &mdash; two ways of reading it.</p>
+        <p class="ties">The commons uses this pairing everywhere: XOR reads what differs, XNOR reads what agrees. Neither reading is the map; both come from it.</p>
+      </div>
+      <div class="figure">
+        <img src="views/read-write.svg" alt="A Karnaugh map for minterms 6, 8 through 14, with its simplified sum-of-products and product-of-sums forms" loading="lazy">
+        <div class="credit">K-map 6,8,9,10,11,12,13,14 &middot; Cburnett &middot; <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:K-map_6,8,9,10,11,12,13,14.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="carry" aria-label="The Carry">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--orange)">Lens 3 &middot; The Carry</div>
+        <h2>Knowing the carry before it arrives</h2>
+        <p>Adding binary numbers the slow way means waiting for each carry to ripple from one column to the next. A carry-lookahead adder works every carry out at once from what is already present. When four bits are added, the final carry lands on bit 4.</p>
+        <p class="ties">Bit 4 is also where a byte splits into its two halves (nibbles). The commons reads colours, rows and columns from exactly that boundary.</p>
+      </div>
+      <div class="figure">
+        <img src="views/carry.svg" alt="Gate-level diagram of a four-bit adder with carry lookahead" loading="lazy">
+        <div class="credit">Four bit adder with carry lookahead &middot; Trex4321 &middot; <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Four_bit_adder_with_carry_lookahead.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="strand" aria-label="The Strand">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--red)">Lens 4 &middot; The Strand</div>
+        <h2>Four letters, paired with their opposites</h2>
+        <p>DNA writes with four bases, which fit exactly in two bits. Each base pairs with its partner &mdash; A with T, C with G &mdash; and the partner strand runs the other way. RNA swaps a single letter: U in place of T.</p>
+        <p class="ties">The commons has its own four-letter alphabet in two bits (&lt; = &gt; ?). Pairing as complement and reading in reverse are the same moves.</p>
+      </div>
+      <div class="figure">
+        <img src="views/strand.svg" alt="Side-by-side comparison of RNA and DNA showing their bases and backbones" loading="lazy">
+        <div class="credit">Difference DNA RNA &middot; Sponk &middot; <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Difference_DNA_RNA-EN.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="reflection" aria-label="The Reflection">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--purple)">Lens 5 &middot; The Reflection</div>
+        <h2>An endless plane inside a circle</h2>
+        <p>Radio engineers use the Smith chart to fold an infinite range of impedances into a single disk. Every point inside is a reflection: how much of a signal bounces back, and at what angle.</p>
+        <p class="ties">The commons works the same way &mdash; a large space is read through one bounded view, and the view is honest about being a view.</p>
+      </div>
+      <div class="figure">
+        <img src="views/reflection.svg" alt="A Smith chart: circles of constant resistance and reactance inside the unit disk" loading="lazy">
+        <div class="credit">Smith chart gen &middot; Wdwd &middot; <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Smith_chart_gen.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="path" aria-label="The Path">
+    <div class="lens">
+      <div>
+        <div class="kicker" style="color:var(--gold)">Lens 6 &middot; The Path</div>
+        <h2>Multiplying by following the arrows</h2>
+        <p>Genaille&ndash;Lucas rulers, from the 1890s, let you multiply without carrying anything in your head. Line up the rulers, follow the slanted triangles from right to left, and read the answer off by position.</p>
+        <p class="ties">In the commons, where you stand is how you read: position carries the answer, not a password or a lookup.</p>
+      </div>
+      <div class="figure">
+        <img src="views/path.png" alt="Full set of Genaille-Lucas rulers, digits 0 to 9 with their triangular paths" loading="lazy">
+        <div class="credit">Genaille-Lucas rulers full &middot; Worrydream &middot; Public domain &middot; <a href="https://commons.wikimedia.org/wiki/File:Genaille-Lucas_rulers_full.svg">Wikimedia Commons</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide credits" id="credits" aria-label="Credits">
+    <div class="kicker" style="color:var(--muted)">Credits &amp; how to check</div>
+    <h2>Whose pictures these are</h2>
+    <div class="wrap">
+      <table>
+        <thead><tr><th>Lens</th><th>Image</th><th>Author</th><th>License</th></tr></thead>
+        <tbody>
+          <tr><td>The Tree</td><td><a href="https://www.sefaria.org/texts/Tanakh">Westminster Leningrad Codex</a> (via Sefaria; Greek checked against Codex Sinaiticus, references only)</td><td>Leningrad Codex; tree drawn by Brian Thorne</td><td>Public domain (Hebrew text)</td></tr>
+          <tr><td>The Torus</td><td><a href="https://commons.wikimedia.org/wiki/File:Karnaugh_map_torus.svg">Karnaugh map torus</a></td><td>Cmglee</td><td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td></tr>
+          <tr><td>Read &amp; Write</td><td><a href="https://commons.wikimedia.org/wiki/File:K-map_6,8,9,10,11,12,13,14.svg">K-map 6,8,9,10,11,12,13,14</a></td><td>Cburnett</td><td><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></td></tr>
+          <tr><td>The Carry</td><td><a href="https://commons.wikimedia.org/wiki/File:Four_bit_adder_with_carry_lookahead.svg">Four bit adder with carry lookahead</a></td><td>Trex4321</td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></td></tr>
+          <tr><td>The Strand</td><td><a href="https://commons.wikimedia.org/wiki/File:Difference_DNA_RNA-EN.svg">Difference DNA RNA</a></td><td>Sponk</td><td><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></td></tr>
+          <tr><td>The Reflection</td><td><a href="https://commons.wikimedia.org/wiki/File:Smith_chart_gen.svg">Smith chart gen</a></td><td>Wdwd</td><td><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></td></tr>
+          <tr><td>The Path</td><td><a href="https://commons.wikimedia.org/wiki/File:Genaille-Lucas_rulers_full.svg">Genaille-Lucas rulers full</a></td><td>Worrydream</td><td>Public domain</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The six images are shown unmodified, from Wikimedia Commons. The commons drawing and this page are by Brian Thorne.</p>
+    <h2>Check it yourself</h2>
+    <ul>
+      <li>The clock rule <code>K(p,C) = rotl(p,1) &oplus; rotl(p,3) &oplus; rotr(p,2) &oplus; C</code> with <code>C = 0x1D</code> on 16 bits returns every starting value to itself after 8 steps. From <code>0x4242</code> the dial shows exactly those 8 states; any language can rerun it.</li>
+      <li>The 240 roots of E8 split 112 + 128, each of squared length 2 &mdash; checked by machine in Coq.</li>
+      <li>The four-cornered atom on the commons is one 2-bit table read four ways; the data sits inside <code>commons.svg</code>, readable by people and programs alike.</li>
+    </ul>
+    <p>Source: <a href="https://github.com/bthornemail/unboxed">github.com/bthornemail/unboxed</a></p>
+  </section>
+</main>
+
+<script>
+(function () {
+  var order = ['commons', 'tree', 'torus', 'read-write', 'carry', 'strand', 'reflection', 'path', 'credits'];
+  var count = document.getElementById('count');
+
+  function current() {
+    var id = (location.hash || '').slice(1);
+    return order.indexOf(id) >= 0 ? id : 'commons';
+  }
+  function show(id) {
+    order.forEach(function (s) {
+      document.getElementById(s).classList.toggle('on', s === id);
+    });
+    count.textContent = (order.indexOf(id) + 1) + ' / ' + order.length;
+    var label = document.getElementById(id).getAttribute('aria-label');
+    document.title = id === 'commons' ? 'The Commons' : label + ' · The Commons';
+    window.scrollTo(0, 0);
+  }
+  function go(step) {
+    var i = order.indexOf(current()) + step;
+    if (i < 0 || i >= order.length) return;
+    location.hash = order[i];
+  }
+
+  window.addEventListener('hashchange', function () { show(current()); });
+  document.getElementById('prev').addEventListener('click', function () { go(-1); });
+  document.getElementById('next').addEventListener('click', function () { go(1); });
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { go(1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { go(-1); e.preventDefault(); }
+    else if (e.key === 'Escape' || e.key === 'Home') { location.hash = 'commons'; }
+  });
+
+  // Inline the commons so its portals are live links, and route them here.
+  var stage = document.getElementById('stage');
+  stage.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || a.getAttribute('xlink:href') || '';
+    var hash = href.split('#')[1];
+    if (hash && order.indexOf(hash) >= 0) { e.preventDefault(); location.hash = hash; }
+  });
+  fetch('commons.svg')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function (text) {
+      stage.innerHTML = text.replace(/^<\?xml[^>]*>\s*/, '');
+      // Scripts inserted as markup do not run; re-create the commons' own script.
+      Array.prototype.forEach.call(stage.querySelectorAll('script'), function (old) {
+        var s = document.createElement('script');
+        s.textContent = old.textContent;
+        old.parentNode.removeChild(old);
+        document.body.appendChild(s);
+      });
+    })
+    .catch(function () {
+      // Opened from disk without a server: embed it instead; its links target the top page.
+      stage.innerHTML = '<object data="commons.svg" type="image/svg+xml" aria-label="The Commons"></object>';
+    });
+
+  show(current());
+})();
+</script>
+</body>
+</html>
